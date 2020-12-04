@@ -1,3 +1,3 @@
 # gamejam-MrZeltus
 
-![](logo%Team/logo%floppy%projeckt%blue.png)
+![](logo%20Team/logo%20floppy%20projeckt%20blue.png)
