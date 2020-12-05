@@ -79,8 +79,6 @@ public class Pathfinder : MonoBehaviour
             t_Current = t_OpenList.Find(t => t.f == t_LowestF);
             t_OpenList.Remove(t_Current);
             t_CloseList.Add(t_Current);
-
-
             if (t_Current == t_EndNode)
                 break;
 
