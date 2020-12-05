@@ -11,12 +11,12 @@ public class Emplacement : MonoBehaviour
 
     public Item item = null;
     public bool isSelected;
-
-    
+    public static Emplacement Instance;
 
     public void Awake()
     {
         Selected();
+        Instance = this;
     }
     public enum TypeEmplacement
     {

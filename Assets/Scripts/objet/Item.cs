@@ -15,5 +15,8 @@ public class Item : MonoBehaviour
     {
         Debug.Log("ajouter la fonction");
     }
+    public virtual void attaquer()
+    {
 
+    }
 }
