@@ -902,17 +902,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: Joueur
       objectReference: {fileID: 0}
-    - target: {fileID: 5590472365322487331, guid: 2c02abc897d31c449b1f0c0b92d18955, type: 3}
-      propertyPath: m_TagString
-      value: Player
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2c02abc897d31c449b1f0c0b92d18955, type: 3}
---- !u!4 &658342743 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 2068314169258874678, guid: 2c02abc897d31c449b1f0c0b92d18955, type: 3}
-  m_PrefabInstance: {fileID: 658342742}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &673138208 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4542141318366700359, guid: e5bf9c1ed003df8449614890d8e472e9, type: 3}
@@ -1602,26 +1593,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 3226353877813333634, guid: c0654deaa2acd384196e6437ed7e4ec3, type: 3}
   m_PrefabInstance: {fileID: 2196524408284379677}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &1425169787 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 5590472365322487331, guid: 2c02abc897d31c449b1f0c0b92d18955, type: 3}
-  m_PrefabInstance: {fileID: 658342742}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1425169788
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1425169787}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 908df1f3f8840434a8e413e366bf828d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  firePoint: {fileID: 658342743}
-  bulletPrefab: {fileID: 6553570913361221323, guid: 29b318f3c535d87478276246df3792c1, type: 3}
-  bulletForce: 20
 --- !u!1001 &1440135349
 PrefabInstance:
   m_ObjectHideFlags: 0
