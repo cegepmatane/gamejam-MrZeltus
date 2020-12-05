@@ -5,8 +5,6 @@ using UnityEngine;
 
 public class Grille : MonoBehaviour
 {
-    public static Grille Instance;
-
     public int RowCount, ColumnCount;
     public float CellSize = 1f;
     public Color GridColor;
@@ -22,9 +20,6 @@ public class Grille : MonoBehaviour
 
     public void Awake()
     {
-        if (Instance != null)
-            Debug.LogError("Trying to create a non-unique instance");
-        Instance = this;
 
         TilesList = gameObject.GetComponentsInChildren<Case>();
         m_TilesList = new Case[ColumnCount, RowCount];

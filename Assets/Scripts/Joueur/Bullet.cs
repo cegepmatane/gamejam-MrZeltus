@@ -13,7 +13,6 @@ public class Bullet : MonoBehaviour
         if (collision.transform.tag != "Player") 
         {
             GameObject effect = Instantiate(hitEffect, transform.position, Quaternion.identity);
-            Debug.Log(collision.transform.gameObject);
             Animator.SetBool("aTouche", true);
             Destroy(effect, 5f);
             Destroy(gameObject);
