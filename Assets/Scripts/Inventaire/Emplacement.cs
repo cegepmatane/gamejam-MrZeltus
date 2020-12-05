@@ -1,11 +1,17 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.UI;
 
 public class Emplacement : MonoBehaviour
 {
     public Item item = null;
+    [SerializeField]
+    Image emplacementItem;
+    public bool isSelected;
+
+    public void Awake()
+    {
+        Selected();
+    }
     public enum TypeEmplacement
     {
         Arme,
@@ -13,11 +19,20 @@ public class Emplacement : MonoBehaviour
     }
     public TypeEmplacement typeEmplacement;
 
-    public void afficher()
+    public void Afficher()
     {
-        GetComponent<Image>().sprite = item.transform.gameObject.GetComponent<SpriteRenderer>().sprite;
-        GetComponent<Image>().color = new Color(255, 255, 255, 100);
-
+        emplacementItem.sprite = item.transform.gameObject.GetComponent<SpriteRenderer>().sprite;
     }
-
+    
+    public void Selected()
+    {
+        if(isSelected == false)
+        {
+            GetComponent<Image>().color = new Color32(96, 96, 96, 255);
+        }
+        else
+        {
+            GetComponent<Image>().color = new Color32(255, 255, 255, 255);
+        }
+    }
 }
