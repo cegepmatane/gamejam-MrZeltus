@@ -6,6 +6,10 @@ public class Grille : MonoBehaviour
 {
     public static Grille Instance;
 
+    public string roomName;
+    public enum RoomType { EnnemieRoom, BossRoom,ItemRoom };
+    public RoomType typeRoom;
+
     public int RowCount, ColumnCount;
     public float CellSize = 1f;
     public Color GridColor;
@@ -32,7 +36,7 @@ public class Grille : MonoBehaviour
             Vector2Int t_tilePos = WorldToGrid(tile.transform.position);
             tile.GridPos = t_tilePos;
             m_TilesList[t_tilePos.x, t_tilePos.y] = tile;
-        }
+        }   
     }
 
 
