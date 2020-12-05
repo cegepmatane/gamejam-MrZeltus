@@ -24,7 +24,7 @@ public class EnnemiFocus : MonoBehaviour
             Case StartTile = TrouverCase(positionEnnemis);
             Case EndTile = TrouverCase(positionJoueur);
             Debug.Log(pathfinder);
-            ennemi.GetComponent<Ennemis>().Path = pathfinder.GetPath(StartTile, EndTile, false);
+            //ennemi.GetComponent<Ennemis>().Path = pathfinder.GetPath(StartTile, EndTile, false);
         }
         
     }

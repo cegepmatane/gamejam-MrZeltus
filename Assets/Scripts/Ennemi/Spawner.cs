@@ -34,7 +34,7 @@ public class Spawner : MonoBehaviour
             Vector2Int positionJoueur = Grille.Instance.WorldToGrid(Personnage.Instance.transform.position);
             StartTile = TrouverCase(positionEnnemis);
             EndTile = TrouverCase(positionJoueur);
-            t_Enemy.GetComponent<Ennemis>().Path = pathfinder.GetPath(StartTile, EndTile, DiagonalAllowed);
+            //t_Enemy.GetComponent<Ennemis>().Path = pathfinder.GetPath(StartTile, EndTile, DiagonalAllowed);
             EnnemiFocus.Instance.ennemis.Add(t_Enemy.GetComponent<Ennemis>());
             ennemieSpawned++;
         }

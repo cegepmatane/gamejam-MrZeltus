@@ -53,12 +53,12 @@ public class Personnage : MonoBehaviour
         if (DeplacementPossible(position))
         {
             DeplacerJoueur(position);
-            EnnemiFocus.Instance.FocusJoueur();
-            Debug.Log("Déplacement possible");
+            //EnnemiFocus.Instance.FocusJoueur();
+
         }
         else
         {
-            Debug.Log("Déplacement Impossible");
+
         }
     }
 
