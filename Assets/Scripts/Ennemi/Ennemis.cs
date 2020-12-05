@@ -18,6 +18,7 @@ public class Ennemis : MonoBehaviour
 
     private void Start()
     {
+
         m_TargetTile = Path.GetNextTile(null);
         transform.position = m_TargetTile.transform.position;
 

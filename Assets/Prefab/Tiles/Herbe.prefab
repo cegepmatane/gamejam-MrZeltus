@@ -46,7 +46,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   GridPos: {x: 0, y: 0}
   typeCase: 0
-  BaseCost: 0
+  BaseCost: 1
 --- !u!212 &5104586389526950372
 SpriteRenderer:
   m_ObjectHideFlags: 0

@@ -11,6 +11,8 @@ GameObject:
   - component: {fileID: 2087638898943661381}
   - component: {fileID: 2087638898943661380}
   - component: {fileID: -3236235659031442605}
+  - component: {fileID: -4409241666318916034}
+  - component: {fileID: 5869941140680603627}
   m_Layer: 0
   m_Name: BaseRoom
   m_TagString: Untagged
@@ -293,6 +295,34 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   roomName: BaseRoom
   typeRoom: 0
+  openNorth: 1
+  openSouth: 1
+  openEast: 1
+  openWest: 1
+--- !u!156049354 &-4409241666318916034
+Grid:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2087638898943661403}
+  m_Enabled: 1
+  m_CellSize: {x: 1, y: 1, z: 1}
+  m_CellGap: {x: 0, y: 0, z: 0}
+  m_CellLayout: 0
+  m_CellSwizzle: 0
+--- !u!114 &5869941140680603627
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2087638898943661403}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a3999f29688cf9f4f80adefa5192ec7e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &39475619134089262
 PrefabInstance:
   m_ObjectHideFlags: 0
