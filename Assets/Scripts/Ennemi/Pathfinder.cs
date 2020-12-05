@@ -15,12 +15,19 @@ public class Pathfinder : MonoBehaviour
         public Node Parent;
     }
 
+    public static Pathfinder Instance;
+
     private Grille m_Grid;
     private Node[,] m_Nodes;
 
     private void Awake()
     {
+        if (Instance != null)
+            Debug.Log("Une instance a déjà été créée");
+        Instance = this;
+
         m_Grid = GetComponent<Grille>();
+
     }
     private void Start()
     {

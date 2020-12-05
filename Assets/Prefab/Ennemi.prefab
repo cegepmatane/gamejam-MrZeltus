@@ -12,7 +12,6 @@ GameObject:
   - component: {fileID: 8409986469820176900}
   - component: {fileID: 2617546297105624050}
   - component: {fileID: 3832745022438407427}
-  - component: {fileID: -4387832380213478658}
   m_Layer: 0
   m_Name: Ennemi
   m_TagString: Untagged
@@ -50,6 +49,7 @@ MonoBehaviour:
   Hp: 5
   m_ReachTargetThreshold: 0.01
   IsDead: 0
+  canMove: 1
 --- !u!212 &2617546297105624050
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -113,15 +113,3 @@ Grid:
   m_CellGap: {x: 0, y: 0, z: 0}
   m_CellLayout: 0
   m_CellSwizzle: 0
---- !u!114 &-4387832380213478658
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4046016561935927850}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a3999f29688cf9f4f80adefa5192ec7e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 

@@ -6,10 +6,12 @@ public class Spawner : MonoBehaviour
 {
     public GameObject EnemyPrefab;
     public float SpawnInterval;
-    public Pathfinder Pathfinder;
+    public Pathfinder pathfinder;
     public Case StartTile;
     public Case EndTile;
     public bool DiagonalAllowed;
+    public int ennmieToSpawn = 2;
+    private int ennemieSpawned = 0;
 
     private float m_LastSpawnTime;
 
@@ -23,7 +25,8 @@ public class Spawner : MonoBehaviour
 
     private void Update()
     {
-        if (Time.time - m_LastSpawnTime >= SpawnInterval)
+
+        if (Time.time - m_LastSpawnTime >= SpawnInterval && ennemieSpawned != ennmieToSpawn)
         {
             m_LastSpawnTime = Time.time;
             GameObject t_Enemy = Instantiate(EnemyPrefab, transform.position, Quaternion.identity);
@@ -31,7 +34,9 @@ public class Spawner : MonoBehaviour
             Vector2Int positionJoueur = Grille.Instance.WorldToGrid(Personnage.Instance.transform.position);
             StartTile = TrouverCase(positionEnnemis);
             EndTile = TrouverCase(positionJoueur);
-            t_Enemy.GetComponent<Ennemis>().Path = Pathfinder.GetPath(StartTile, EndTile, DiagonalAllowed);
+            t_Enemy.GetComponent<Ennemis>().Path = pathfinder.GetPath(StartTile, EndTile, DiagonalAllowed);
+            EnnemiFocus.Instance.ennemis.Add(t_Enemy.GetComponent<Ennemis>());
+            ennemieSpawned++;
         }
     }
 

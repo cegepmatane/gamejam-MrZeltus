@@ -15,7 +15,6 @@ public class Ennemis : MonoBehaviour
 
     public bool IsDead;
 
-
     private void Start()
     {
 
@@ -27,6 +26,8 @@ public class Ennemis : MonoBehaviour
 
     private void Update()
     {
+        Vector2Int positionGrille = Grille.Instance.WorldToGrid(transform.position);
+
         if (m_TargetTile == null)
         {
             //Die();
