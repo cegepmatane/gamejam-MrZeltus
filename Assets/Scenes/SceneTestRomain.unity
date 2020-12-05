@@ -238,6 +238,7 @@ MonoBehaviour:
   availibleRoom:
   - {fileID: 2087638898943661403, guid: 6ec3bdc11cc4a8643bb5e136b7de7cde, type: 3}
   - {fileID: 2389610770941167643, guid: 94849eaa2ac406549bf03ef0e8ab2b1c, type: 3}
+  availiblePlayRoom: []
   levelSize: 10
 --- !u!4 &1851757194
 Transform:

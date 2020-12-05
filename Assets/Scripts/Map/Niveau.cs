@@ -5,6 +5,10 @@ using UnityEngine;
 public class Niveau : MonoBehaviour
 {
     public GameObject[] availibleRoom;
+
+    public GameObject[] availiblePlayRoom;
+    private GameObject[] availibleBossRoom;
+
     public int levelSize = 10;
     public GameObject[,] rooms;
 
@@ -23,10 +27,12 @@ public class Niveau : MonoBehaviour
     }
     void GenerateRoom()
     {
+        FindAvailibleRoom();
         Vector2Int positionSpawn = new Vector2Int(0, 0);
+
         for (int i = 0; i < levelSize; i++)
         {
-            if(currentRoom != null)
+            if (currentRoom != null)
             {
                 int random = Random.Range(0, 4);
                 switch (random)
@@ -45,7 +51,7 @@ public class Niveau : MonoBehaviour
                         break;
                     case 4:
                         //Vers la gauche
-                        positionSpawn = new Vector2Int((int)currentRoom.transform.position.x, (int)currentRoom.transform.position.y-15);
+                        positionSpawn = new Vector2Int((int)currentRoom.transform.position.x, (int)currentRoom.transform.position.y - 15);
                         break;
                     default:
                         break;
@@ -56,5 +62,10 @@ public class Niveau : MonoBehaviour
 
 
         }
+    }
+
+    private static void FindAvailibleRoom()
+    {
+        
     }
 }
