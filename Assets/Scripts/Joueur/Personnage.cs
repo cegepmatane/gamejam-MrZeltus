@@ -6,14 +6,13 @@ using UnityEngine;
 [RequireComponent(typeof(Rigidbody))]
 public class Personnage : MonoBehaviour
 {
-    Rigidbody2D body;
+    public Rigidbody2D body;
+    public Camera cam;
 
-    public GameObject sprite;
+    Vector2 movement;
+    Vector2 mousePos;
 
-    float horizontal;
-    float vertical;
-
-    public float runSpeed = 20.0f;
+    public float runSpeed = 10.0f;
 
     void Start()
     {
@@ -22,26 +21,19 @@ public class Personnage : MonoBehaviour
 
     void Update()
     {
-        horizontal = Input.GetAxisRaw("Horizontal");
-        vertical = Input.GetAxisRaw("Vertical");
+        movement.x = Input.GetAxisRaw("Horizontal");
+        movement.y = Input.GetAxisRaw("Vertical");
 
-        Debug.Log(horizontal);
+        mousePos = cam.ScreenToWorldPoint(Input.mousePosition);
+
     }
 
     private void FixedUpdate()
     {
-        body.velocity = new Vector2(horizontal * runSpeed, vertical * runSpeed);
+        body.MovePosition(body.position + movement * runSpeed * Time.fixedDeltaTime);
 
-        //rotation
-        Vector3 mousePos = Input.mousePosition;
-        mousePos.z = 0;
-
-        Vector3 objectPos = Camera.main.WorldToScreenPoint(transform.position);
-        mousePos.x = mousePos.x - objectPos.x;
-        mousePos.y = mousePos.y - objectPos.y;
-
-        float angle = Mathf.Atan2(mousePos.y, mousePos.x) * Mathf.Rad2Deg;
-        sprite.transform.rotation = Quaternion.Euler(new Vector3(0, 0, angle));
-
+        Vector2 lookDir = mousePos - body.position;
+        float angle = Mathf.Atan2(lookDir.y, lookDir.x) * Mathf.Rad2Deg - 90f;
+        body.rotation = angle;
     }
 }
