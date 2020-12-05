@@ -175,7 +175,7 @@ public class Niveau : MonoBehaviour
             if (room.southRoom == true)
             {
                 Grille grilleActuel = room.transform.GetComponent<Grille>();
-                Vector2Int pos = new Vector2Int(7, 0); 
+                Vector2Int pos = new Vector2Int(7, 0);
                 grilleActuel.replaceTile(tilePortail, pos);
 
             }
