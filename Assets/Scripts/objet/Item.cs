@@ -11,4 +11,9 @@ public class Item : MonoBehaviour
 
     public ItemType itemType;
 
+    public virtual void utiliser()
+    {
+        Debug.Log("ajouter la fonction");
+    }
+
 }
