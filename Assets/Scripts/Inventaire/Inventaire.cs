@@ -33,15 +33,37 @@ public class Inventaire : MonoBehaviour
     {
         for (int i = 0; i < emplacementList.Length; i++)
         {
-            if (emplacementList[i] == emplacement)
+            if (emplacementList[i] == emplacement && (emplacementList[i].typeEmplacement.ToString() == "Arme" && emplacement.typeEmplacement.ToString() == "Arme"))
             {
                 emplacementList[i].isSelected = true;
             }
-            else
+            else if (emplacementList[i].typeEmplacement.ToString() == "Arme" && emplacement.typeEmplacement.ToString() == "Arme")
+            {
+                emplacementList[i].isSelected = false; 
+            }
+            else if (emplacementList[i] == emplacement && (emplacementList[i].typeEmplacement.ToString() == "Objet" && emplacement.typeEmplacement.ToString() == "Objet"))
+            {
+                emplacementList[i].isSelected = true;
+            }
+            else if (emplacementList[i].typeEmplacement.ToString() == "Objet" && emplacement.typeEmplacement.ToString() == "Objet")
             {
                 emplacementList[i].isSelected = false;
             }
             emplacementList[i].Selected();
+        }
+    }
+
+    public void Jetter()
+    {
+        for (int i = 0; i < emplacementList.Length; i++)
+        {
+            if (emplacementList[i].item != null)
+            {
+                emplacementList[i].item = null;
+                emplacementList[i].NePlusAfficher();
+                item.transform.gameObject.SetActive(true);
+                return;
+            }
         }
     }
 }

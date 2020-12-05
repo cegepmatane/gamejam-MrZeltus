@@ -3,10 +3,16 @@ using UnityEngine.UI;
 
 public class Emplacement : MonoBehaviour
 {
-    public Item item = null;
+    
     [SerializeField]
     Image emplacementItem;
+    [SerializeField]
+    Sprite transparent;
+
+    public Item item = null;
     public bool isSelected;
+
+    
 
     public void Awake()
     {
@@ -23,7 +29,11 @@ public class Emplacement : MonoBehaviour
     {
         emplacementItem.sprite = item.transform.gameObject.GetComponent<SpriteRenderer>().sprite;
     }
-    
+    public void NePlusAfficher()
+    {
+        emplacementItem.sprite = transparent;
+    }
+
     public void Selected()
     {
         if(isSelected == false)
