@@ -280,6 +280,17 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6ec3bdc11cc4a8643bb5e136b7de7cde, type: 3}
+--- !u!114 &706757215 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5869941140680603627, guid: 6ec3bdc11cc4a8643bb5e136b7de7cde, type: 3}
+  m_PrefabInstance: {fileID: 706757214}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a3999f29688cf9f4f80adefa5192ec7e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1249934569
 GameObject:
   m_ObjectHideFlags: 0
@@ -305,7 +316,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1249934569}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2.36, y: 4.29, z: -7.2476573}
+  m_LocalPosition: {x: 2.36, y: 4.29, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -324,8 +335,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   EnemyPrefab: {fileID: 4046016561935927850, guid: dc5cb9b04b208aa46a11ce16e40cdba3, type: 3}
-  SpawnInterval: 0
-  Pathfinder: {fileID: 0}
+  SpawnInterval: 2
+  Pathfinder: {fileID: 706757215}
   StartTile: {fileID: 0}
   EndTile: {fileID: 0}
   DiagonalAllowed: 0

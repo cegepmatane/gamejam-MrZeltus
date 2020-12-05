@@ -37,11 +37,11 @@ public class Spawner : MonoBehaviour
 
     public Case TrouverCase(Vector2Int position)
     {
-        foreach (GameObject tuile in Grille.Instance.AvailibleTime)
+        foreach (Case tuile in Grille.Instance.TilesList)
         {
-            if (tuile.GetComponent<Case>().GridPos == position)
+            if (tuile.GridPos == position)
             {
-                return tuile.GetComponent<Case>();
+                return tuile;
             }
         }
         Debug.LogError("Tuile non trouvée");
