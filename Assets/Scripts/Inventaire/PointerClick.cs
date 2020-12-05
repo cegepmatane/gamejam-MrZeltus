@@ -11,7 +11,7 @@ public class PointerClick : MonoBehaviour, IPointerClickHandler
         }
         else if (eventData.button == PointerEventData.InputButton.Right)
         {
-            Inventaire.Instance.Jetter();
+            Inventaire.Instance.Jetter(transform.gameObject.GetComponent<Emplacement>());
         }
    }   
 }

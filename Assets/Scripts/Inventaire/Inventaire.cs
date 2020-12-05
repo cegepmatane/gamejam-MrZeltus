@@ -12,8 +12,6 @@ public class Inventaire : MonoBehaviour
         public void Start()
         {
             Instance = this;
-            Recuperer(item);
-            Debug.Log(emplacementList.Length);
         }
     public void Recuperer(Item item)
     {
@@ -53,15 +51,17 @@ public class Inventaire : MonoBehaviour
         }
     }
 
-    public void Jetter()
+    public void Jetter(Emplacement emplacement)
     {
+
         for (int i = 0; i < emplacementList.Length; i++)
         {
-            if (emplacementList[i].item != null)
+            if (emplacementList[i] == emplacement && emplacementList[i].item != null)
             {
-                emplacementList[i].item = null;
+                
                 emplacementList[i].NePlusAfficher();
-                item.transform.gameObject.SetActive(true);
+                emplacementList[i].item.transform.gameObject.SetActive(true);
+                emplacementList[i].item = null;
                 return;
             }
         }
