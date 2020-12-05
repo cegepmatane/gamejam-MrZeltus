@@ -12,7 +12,6 @@ public class PersonnageRamasser : MonoBehaviour
             {
                 Inventaire.Instance.Recuperer(hit.transform.GetComponent<Item>());
             }
-
         }
     }
 }

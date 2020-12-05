@@ -6,6 +6,7 @@ public class Inventaire : MonoBehaviour
     private Emplacement[] emplacementList;
     public static Inventaire Instance;
 
+    
 
     public Item item;
 
@@ -79,10 +80,22 @@ public class Inventaire : MonoBehaviour
     {
         for (int i = 0; i < emplacementList.Length; i++)
         {
-            if (emplacementList[i].isSelected == true && emplacementList[i].typeEmplacement.ToString() == "Objet")
+            if (emplacementList[i].item != null && emplacementList[i].isSelected == true && emplacementList[i].typeEmplacement.ToString() == "Objet")
             {
-                item.utiliser();
+                emplacementList[i].item.utiliser();
                 detruireItem(emplacementList[i], emplacementList[i].item);
+            }
+        }
+    }
+    public void UtiliserArme()
+    {
+        for (int i = 0; i < emplacementList.Length; i++)
+        {
+            if (emplacementList[i].item != null && emplacementList[i].isSelected == true && emplacementList[i].typeEmplacement.ToString() == "Arme")
+            {
+                string nom = emplacementList[i].item.name;
+                Debug.Log(nom);
+                emplacementList[i].item.attaquer(); // recuperer le nom de l'arme et de l'objet
             }
         }
     }
