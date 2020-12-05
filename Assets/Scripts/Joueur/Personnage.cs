@@ -11,9 +11,14 @@ public class Personnage : MonoBehaviour
 
     private Vector2Int DeplacerVers;
 
-    float horizontalDeplacement = 0f;
-    float verticalDeplacement = 0f;
+    public static Personnage Instance;
 
+    private void Awake()
+    {
+        if(Instance != null)
+            Debug.Log("Une instance de personnage a déjà été créée");
+        Instance = this;
+    }
     private void Update()
     {
         
