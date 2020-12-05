@@ -94,7 +94,7 @@ public class Inventaire : MonoBehaviour
             if (emplacementList[i].item != null && emplacementList[i].isSelected == true && emplacementList[i].typeEmplacement.ToString() == "Arme")
             {
                 string nom = emplacementList[i].item.name;
-                Debug.Log(nom + "salut");
+                Debug.Log(nom);
                 emplacementList[i].item.attaquer(); // recuperer le nom de l'arme et de l'objet
             }
         }
