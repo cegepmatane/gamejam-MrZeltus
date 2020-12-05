@@ -5,7 +5,9 @@ using UnityEngine;
 public class Case : MonoBehaviour
 {
     public Vector2Int GridPos;
-    public bool isWalkable;
+    public enum CaseType {Sol,Mur};
+    public CaseType typeCase;
+
     public float BaseCost;
 
 }
