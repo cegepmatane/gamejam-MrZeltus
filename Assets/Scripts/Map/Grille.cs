@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using UnityEditor;
 using UnityEngine;
 
 public class Grille : MonoBehaviour
@@ -80,6 +81,20 @@ public class Grille : MonoBehaviour
         if (a_GridPos.x < 0 || a_GridPos.x >= ColumnCount || a_GridPos.y < 0 || a_GridPos.y >= RowCount)
             throw new ExeptionGrille("Out of Grid");
         return m_TilesList[a_GridPos.x, a_GridPos.y];
+    }
+    public void replaceTile(GameObject replaceTile,Vector2Int position)
+    {
+        Case toReplace = GetTile(position);
+        Destroy(toReplace.gameObject);
+
+        GameObject t_NewTileGo = Instantiate(replaceTile,GridToWorld(position),Quaternion.identity);
+       
+        //Position
+        float t_CellSize = CellSize;
+        Sprite t_Sprite = t_NewTileGo.GetComponent<SpriteRenderer>().sprite;
+        float t_Scale = t_CellSize / t_Sprite.bounds.size.x;
+        t_NewTileGo.transform.localScale = new Vector3(t_Scale, t_Scale, t_Scale);
+        t_NewTileGo.GetComponent<Case>().GridPos = position;
     }
 
     public Vector3 GridToWorld(Vector2Int a_GridPos)

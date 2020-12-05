@@ -12,8 +12,6 @@ public class Inventaire : MonoBehaviour
         public void Start()
         {
             Instance = this;
-            Recuperer(item);
-            Debug.Log(emplacementList.Length);
         }
     public void Recuperer(Item item)
     {
@@ -33,15 +31,39 @@ public class Inventaire : MonoBehaviour
     {
         for (int i = 0; i < emplacementList.Length; i++)
         {
-            if (emplacementList[i] == emplacement)
+            if (emplacementList[i] == emplacement && (emplacementList[i].typeEmplacement.ToString() == "Arme" && emplacement.typeEmplacement.ToString() == "Arme"))
             {
                 emplacementList[i].isSelected = true;
             }
-            else
+            else if (emplacementList[i].typeEmplacement.ToString() == "Arme" && emplacement.typeEmplacement.ToString() == "Arme")
+            {
+                emplacementList[i].isSelected = false; 
+            }
+            else if (emplacementList[i] == emplacement && (emplacementList[i].typeEmplacement.ToString() == "Objet" && emplacement.typeEmplacement.ToString() == "Objet"))
+            {
+                emplacementList[i].isSelected = true;
+            }
+            else if (emplacementList[i].typeEmplacement.ToString() == "Objet" && emplacement.typeEmplacement.ToString() == "Objet")
             {
                 emplacementList[i].isSelected = false;
             }
             emplacementList[i].Selected();
+        }
+    }
+
+    public void Jetter(Emplacement emplacement)
+    {
+
+        for (int i = 0; i < emplacementList.Length; i++)
+        {
+            if (emplacementList[i] == emplacement && emplacementList[i].item != null)
+            {
+                
+                emplacementList[i].NePlusAfficher();
+                emplacementList[i].item.transform.gameObject.SetActive(true);
+                emplacementList[i].item = null;
+                return;
+            }
         }
     }
 }

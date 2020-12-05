@@ -5,63 +5,74 @@ using UnityEngine;
 public class Niveau : MonoBehaviour
 {
     public GameObject[] availibleRoom;
-
+    public GameObject tilePortail;
     public List<GameObject> availiblePlayRoom;
     private List<GameObject> availibleBossRoom = new List<GameObject>();
     private List<int> isDirectionAvailible;
 
     public int levelSize = 10;
     public GameObject[,] rooms;
+    private int offsetArray = 500;
+    public Vector2Int currentRoomPos;
+
+    public List<Room> spawnedRoom;
 
     private GameObject currentRoom;
 
     // Start is called before the first frame update
     void Start()
     {
+        rooms = new GameObject[(levelSize+offsetArray)*2,(levelSize+ offsetArray)*2];
         FindAvailibleRoom();
         GenerateRoom();
+        SpawnPortail();
     }
 
     void GenerateRoom()
     {
+        currentRoomPos = new Vector2Int(0, 0);
         Vector2Int positionSpawn = new Vector2Int(0, 0);
+        Room pastRoom = new Room();
 
         for (int i = 0; i <= levelSize; i++)
         {
+            if (currentRoom != null)
+            {
+                pastRoom = currentRoom.GetComponent<Room>();
+            }
             bool openEast = true, openWest = true, openNorth = true, openSouth = true;
 
             if (currentRoom != null)
             {
-                Room room = currentRoom.GetComponent<Room>();
-                isDirectionAvailible = CheckDirection(room);
+
+                isDirectionAvailible = CheckDirection(pastRoom);
                 int random = Random.Range(0, isDirectionAvailible.Count);
                 int number = isDirectionAvailible[random];
-                switch (random)
+                switch (number)
                 {
                     case 1:
                         //Vers la droite
                         positionSpawn = new Vector2Int((int)currentRoom.transform.position.x + 15, (int)currentRoom.transform.position.y);
-                        room.openEast = false;
+                        currentRoomPos.x += 1;
                         openWest = false;
 
                         break;
                     case 2:
                         //Vers la gauche
                         positionSpawn = new Vector2Int((int)currentRoom.transform.position.x - 15, (int)currentRoom.transform.position.y);
-                        room.openWest = false;
+                        currentRoomPos.x -= 1;
                         openEast = false;
                         break;
                     case 3:
                         //Vers le haut
                         positionSpawn = new Vector2Int((int)currentRoom.transform.position.x, (int)currentRoom.transform.position.y + 15);
-                        room.openNorth = false;
+                        currentRoomPos.y += 1;
                         openSouth = false;
-
                         break;
                     case 4:
                         //Vers le bas
                         positionSpawn = new Vector2Int((int)currentRoom.transform.position.x, (int)currentRoom.transform.position.y - 15);
-                        room.openSouth = false;
+                        currentRoomPos.y -= 1;
                         openNorth = false;
                         break;
                     default:
@@ -78,30 +89,54 @@ public class Niveau : MonoBehaviour
                 int randomRoom = Random.Range(0, availiblePlayRoom.Count);
                 currentRoom = Instantiate(availiblePlayRoom[randomRoom], new Vector3(positionSpawn.x, positionSpawn.y, 0), Quaternion.identity);
             }
-            currentRoom.GetComponent<Room>().openEast = openEast;
-            currentRoom.GetComponent<Room>().openNorth = openNorth;
-            currentRoom.GetComponent<Room>().openWest = openWest;
-            currentRoom.GetComponent<Room>().openSouth = openSouth;
-
+            currentRoom.GetComponent<Room>().roomPos = currentRoomPos;
+            spawnedRoom.Add(currentRoom.GetComponent<Room>());
+            Vector2Int currentRoomOffset = new Vector2Int(currentRoomPos.x + offsetArray, currentRoomPos.y + offsetArray);
+            rooms[currentRoomOffset.x, currentRoomOffset.y] = currentRoom;
+            CheckForRoom(currentRoom.GetComponent<Room>(),currentRoomOffset);
+        }
+        foreach (Room room in spawnedRoom)
+        {
+            Vector2Int currentRoomOffset = new Vector2Int(room.roomPos.x + offsetArray, room.roomPos.y + offsetArray);
+            CheckForRoom(room, currentRoomOffset);
         }
     }
 
+    private void CheckForRoom(Room room,Vector2Int position)
+    {
+       if(rooms[position.x+1, position.y] != null)
+        {
+            room.eastRoom = rooms[position.x + 1, position.y].GetComponent<Room>();
+        }
+        if (rooms[position.x - 1, position.y] != null)
+        {
+            room.westRoom = rooms[position.x - 1, position.y].GetComponent<Room>();
+        }
+        if (rooms[position.x, position.y+1] != null)
+        {
+            room.northRoom = rooms[position.x, position.y+1].GetComponent<Room>();
+        }
+        if (rooms[position.x, position.y - 1] != null)
+        {
+            room.southRoom = rooms[position.x, position.y-1].GetComponent<Room>();
+        }
+    }
     private List<int> CheckDirection(Room room)
     {
         List<int> direction = new List<int>();
-        if (room.openNorth)
+        if (room.northRoom == null)
         {
             direction.Add(3);
         }
-        if (room.openSouth)
+        if (room.southRoom == null)
         {
             direction.Add(4);
         }
-        if (room.openEast)
+        if (room.eastRoom == null)
         {
             direction.Add(1);
         }
-        if (room.openWest)
+        if (room.westRoom == null)
         {
             direction.Add(2);
         }
@@ -121,6 +156,43 @@ public class Niveau : MonoBehaviour
                 availibleBossRoom.Add(room);
             }
 
+        }
+    }
+
+
+    
+
+    private void SpawnPortail()
+    {
+        foreach (Room room in spawnedRoom)
+        {
+            if(room.northRoom == true)
+            {
+                Grille grilleActuel = room.transform.GetComponent<Grille>();
+                Vector2Int pos = new Vector2Int(7, grilleActuel.RowCount-1);
+                grilleActuel.replaceTile(tilePortail, pos);
+            }
+            if (room.southRoom == true)
+            {
+                Grille grilleActuel = room.transform.GetComponent<Grille>();
+                Vector2Int pos = new Vector2Int(7, 0); 
+                grilleActuel.replaceTile(tilePortail, pos);
+
+            }
+            if (room.westRoom == true)
+            {
+                Grille grilleActuel = room.transform.GetComponent<Grille>();
+                Vector2Int pos = new Vector2Int(0,7);
+                grilleActuel.replaceTile(tilePortail, pos);
+
+            }
+            if (room.eastRoom == true)
+            {
+                Grille grilleActuel = room.transform.GetComponent<Grille>();
+                Vector2Int pos = new Vector2Int(grilleActuel.RowCount - 1, 7);
+                grilleActuel.replaceTile(tilePortail, pos);
+
+            }
         }
     }
 }

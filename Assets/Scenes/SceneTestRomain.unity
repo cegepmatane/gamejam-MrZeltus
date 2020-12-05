@@ -238,8 +238,11 @@ MonoBehaviour:
   availibleRoom:
   - {fileID: 2087638898943661403, guid: 6ec3bdc11cc4a8643bb5e136b7de7cde, type: 3}
   - {fileID: 2389610770941167643, guid: 94849eaa2ac406549bf03ef0e8ab2b1c, type: 3}
+  - {fileID: 8798267469426955101, guid: 59b8c09145f7d1e44a92d50d0a3f1039, type: 3}
+  - {fileID: 8170288746185497824, guid: f3dd1cf532e3d7d4c8d7adaa66efee4c, type: 3}
   availiblePlayRoom: []
-  levelSize: 10
+  levelSize: 20
+  currentRoomPos: {x: 0, y: 0}
 --- !u!4 &1851757194
 Transform:
   m_ObjectHideFlags: 0
