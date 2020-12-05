@@ -20,9 +20,9 @@ public class EnnemiFocus : MonoBehaviour
         foreach (Ennemis ennemi in ennemis)
         {
             Vector2Int positionEnnemis = Grille.Instance.WorldToGrid(ennemi.transform.position);
-            Vector2Int positionJoueur = Grille.Instance.WorldToGrid(Personnage.Instance.transform.position);
+            //Vector2Int positionJoueur = Grille.Instance.WorldToGrid(Personnage.Instance.transform.position);
             Case StartTile = TrouverCase(positionEnnemis);
-            Case EndTile = TrouverCase(positionJoueur);
+            //Case EndTile = TrouverCase(positionJoueur);
             Debug.Log(pathfinder);
             //ennemi.GetComponent<Ennemis>().Path = pathfinder.GetPath(StartTile, EndTile, false);
         }

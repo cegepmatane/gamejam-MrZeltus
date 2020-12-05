@@ -1,94 +1,47 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿/* Joseph Breslin 2018
+* Rigidbody and transform movement script for 2D player */
+
 using UnityEngine;
 
+[RequireComponent(typeof(Rigidbody))]
 public class Personnage : MonoBehaviour
 {
-    public LayerMask mask;
-    public enum CaseType { Sol, Mur };
-    public CaseType typeCase;
-    public Grille grilleActuelle;
+    Rigidbody2D body;
 
-    private Vector2Int DeplacerVers;
+    public GameObject sprite;
 
-    public static Personnage Instance;
+    float horizontal;
+    float vertical;
 
-    private void Awake()
+    public float runSpeed = 20.0f;
+
+    void Start()
     {
-        if(Instance != null)
-            Debug.Log("Une instance de personnage a déjà été créée");
-        Instance = this;
-    }
-    private void Update()
-    {
-        
-        if (Input.GetButtonDown("Droite"))
-        {
-            DeplacerVers = new Vector2Int(1, 0);
-            SeDeplacer(DeplacerVers);
-        }
-
-        if (Input.GetButtonDown("Gauche"))
-        {
-            DeplacerVers = new Vector2Int(-1, 0);
-            SeDeplacer(DeplacerVers);
-        }
-
-        if (Input.GetButtonDown("Avancer"))
-        {
-            DeplacerVers = new Vector2Int(0, 1);
-            SeDeplacer(DeplacerVers);
-        }
-
-        if (Input.GetButtonDown("Reculer"))
-        {
-            DeplacerVers = new Vector2Int(0, -1);
-            SeDeplacer(DeplacerVers);
-        }
-
+        body = GetComponent<Rigidbody2D>();
     }
 
-    private void SeDeplacer(Vector2Int position)
+    void Update()
     {
-        if (DeplacementPossible(position))
-        {
-            DeplacerJoueur(position);
-            //EnnemiFocus.Instance.FocusJoueur();
+        horizontal = Input.GetAxisRaw("Horizontal");
+        vertical = Input.GetAxisRaw("Vertical");
 
-        }
-        else
-        {
-
-        }
+        Debug.Log(horizontal);
     }
 
-    private bool DeplacementPossible(Vector2Int position)
+    private void FixedUpdate()
     {
-        Vector2Int positionJoueur = grilleActuelle.WorldToGrid(transform.position);
+        body.velocity = new Vector2(horizontal * runSpeed, vertical * runSpeed);
 
-        foreach (Case tuile in grilleActuelle.TilesList)
-        {
-            if (tuile.GridPos == positionJoueur + position)
-            {
-                if(tuile.typeCase.ToString() == "Sol")
-                {
-                    return true;
-                }
-                else
-                {
-                    return false;
-                }
-            }
-        }
+        //rotation
+        Vector3 mousePos = Input.mousePosition;
+        mousePos.z = 0;
 
-        return false;
-    }
+        Vector3 objectPos = Camera.main.WorldToScreenPoint(transform.position);
+        mousePos.x = mousePos.x - objectPos.x;
+        mousePos.y = mousePos.y - objectPos.y;
 
-    private void DeplacerJoueur(Vector2Int position)
-    {
-        Vector2Int positionTemp = grilleActuelle.WorldToGrid(transform.position) + position;
-        Vector3 positionJoueur = grilleActuelle.GridToWorld(positionTemp);
-        positionJoueur.z = -0.5f;
-        transform.position = positionJoueur;
+        float angle = Mathf.Atan2(mousePos.y, mousePos.x) * Mathf.Rad2Deg;
+        sprite.transform.rotation = Quaternion.Euler(new Vector3(0, 0, angle));
+
     }
 }

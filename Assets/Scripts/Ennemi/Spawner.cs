@@ -31,9 +31,9 @@ public class Spawner : MonoBehaviour
             m_LastSpawnTime = Time.time;
             GameObject t_Enemy = Instantiate(EnemyPrefab, transform.position, Quaternion.identity);
             Vector2Int positionEnnemis = Grille.Instance.WorldToGrid(t_Enemy.transform.position);
-            Vector2Int positionJoueur = Grille.Instance.WorldToGrid(Personnage.Instance.transform.position);
+            //Vector2Int positionJoueur = Grille.Instance.WorldToGrid(Personnage.Instance.transform.position);
             StartTile = TrouverCase(positionEnnemis);
-            EndTile = TrouverCase(positionJoueur);
+            //EndTile = TrouverCase(positionJoueur);
             //t_Enemy.GetComponent<Ennemis>().Path = pathfinder.GetPath(StartTile, EndTile, DiagonalAllowed);
             EnnemiFocus.Instance.ennemis.Add(t_Enemy.GetComponent<Ennemis>());
             ennemieSpawned++;
