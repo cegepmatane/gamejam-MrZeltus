@@ -6,10 +6,6 @@ public class Grille : MonoBehaviour
 {
     public static Grille Instance;
 
-    public string roomName;
-    public enum RoomType { EnnemieRoom, BossRoom,ItemRoom };
-    public RoomType typeRoom;
-
     public int RowCount, ColumnCount;
     public float CellSize = 1f;
     public Color GridColor;

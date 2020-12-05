@@ -20002,6 +20002,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8798267469426955075}
   - component: {fileID: 8798267469426955074}
+  - component: {fileID: -1000080846284746434}
   m_Layer: 0
   m_Name: RoomTestBoss
   m_TagString: Untagged
@@ -20260,8 +20261,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9a86361ad9572104e8adc19a15afc120, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  roomName: RoomTestBoss
-  typeRoom: 1
   RowCount: 15
   ColumnCount: 15
   CellSize: 1
@@ -20272,6 +20271,20 @@ MonoBehaviour:
   - {fileID: 5499746345211718438, guid: e5bf9c1ed003df8449614890d8e472e9, type: 3}
   - {fileID: 3432582511995709451, guid: c0654deaa2acd384196e6437ed7e4ec3, type: 3}
   SelectedTile: 0
+--- !u!114 &-1000080846284746434
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8798267469426955101}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0406b09dc3318ee4182b8f14c9531496, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  roomName: RoomTestBoss
+  typeRoom: 1
 --- !u!1 &8798267469438932855
 GameObject:
   m_ObjectHideFlags: 0
