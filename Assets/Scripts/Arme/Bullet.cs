@@ -7,7 +7,7 @@ public class Bullet : MonoBehaviour
     public GameObject hitEffect;
     public Animator Animator;
 
-    [SerializeField] public int dommage = 10;
+    [SerializeField] public int dommage = 10; //mettre sur vieEnnemie
 
     private void OnTriggerEnter2D(Collider2D collision)
     {

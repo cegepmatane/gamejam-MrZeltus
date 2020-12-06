@@ -4,6 +4,7 @@
 public class Personnage : MonoBehaviour
 {
     public static Personnage Instance;
+    public Transform firePoint;
     public Rigidbody2D body;
     public Camera cam;
 

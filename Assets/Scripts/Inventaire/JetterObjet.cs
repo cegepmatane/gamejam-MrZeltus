@@ -12,6 +12,7 @@ public class JetterObjet : MonoBehaviour
 
     public void LancerObjet(Item item, Vector3 position)
     {
+        position.z = 0;
         item.transform.position = position;
         item.GetComponent<Rigidbody2D>().AddRelativeForce(Random.onUnitSphere * speed);
     }

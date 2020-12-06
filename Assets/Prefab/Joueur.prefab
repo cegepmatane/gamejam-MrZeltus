@@ -78,6 +78,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f477d2005c94e154b8203dfb2a15539e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  firePoint: {fileID: 2068314169258874678}
   body: {fileID: 742959167}
   cam: {fileID: 0}
   runSpeed: 5
@@ -195,3 +196,5 @@ MonoBehaviour:
   bulletPrefab: {fileID: 6553570913361221323, guid: 29b318f3c535d87478276246df3792c1, type: 3}
   bulletForce: 20
   cadenceDeTir: 0.4
+  spred: 0.5
+  NbBalle: 4

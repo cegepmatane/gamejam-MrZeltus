@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class Tirer : MonoBehaviour
 {
@@ -9,9 +7,9 @@ public class Tirer : MonoBehaviour
 
     public float bulletForce = 20f;
 
-    [SerializeField]
-    private float cadenceDeTir = 0.4f; // cadence de tire, le spred, le monbre de balle, les degas
-
+    [SerializeField] private float cadenceDeTir = 0.4f; // cadence de tire, le spred, le monbre de balle, les degas
+    [SerializeField] private float spred = 0.5f;
+    [SerializeField] private int NbBalle = 4;
     private float lastShot;
 
     void Update()
@@ -29,14 +27,13 @@ public class Tirer : MonoBehaviour
 
     void Tire()
     {
-
         GameObject bullet = new GameObject();
-        for (int i = 0; i < 4; i++)
+        for (int i = 0; i < NbBalle; i++)
         {
-            float firepointNx = firePoint.up.x - 0.3f;
-            float firepointPx = firePoint.up.x + 0.3f;
-            float firepointNy = firePoint.up.y - 0.3f;
-            float firepointPy = firePoint.up.y + 0.3f;
+            float firepointNx = firePoint.up.x - spred;
+            float firepointPx = firePoint.up.x + spred;
+            float firepointNy = firePoint.up.y - spred;
+            float firepointPy = firePoint.up.y + spred;
             Vector3 rotationx = firePoint.up;
             Vector3 rotationy = firePoint.up;
             float anglex = Random.Range(firepointNx, firepointPx);
