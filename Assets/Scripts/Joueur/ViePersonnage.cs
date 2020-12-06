@@ -34,9 +34,7 @@ public class ViePersonnage : MonoBehaviour
         if (time - lastDamage >= immunity)
         {
             lastDamage = time;
-
             m_Health -= a_Damage;
-
             m_Vie.SetVie(m_Health);
         }
 

@@ -4998,6 +4998,11 @@ MonoBehaviour:
   roomName: RoomTestBoss
   typeRoom: 1
   roomPos: {x: 0, y: 0}
+  isClear: 0
+  ennemis: []
+  computer: {fileID: 0}
+  availlibleSpawnCase: []
+  tileRepresentingIt: {fileID: 3432582511995709451, guid: c0654deaa2acd384196e6437ed7e4ec3, type: 3}
   northRoom: {fileID: 0}
   southRoom: {fileID: 0}
   eastRoom: {fileID: 0}

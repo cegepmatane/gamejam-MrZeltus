@@ -8249,7 +8249,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &3850457694855327071
 Transform:
   m_ObjectHideFlags: 0
@@ -8526,6 +8526,11 @@ MonoBehaviour:
   roomName: RoomTest1
   typeRoom: 0
   roomPos: {x: 0, y: 0}
+  isClear: 0
+  ennemis: []
+  computer: {fileID: 450785570754445582, guid: 52141b932e774634d82c4c6725f87ddc, type: 3}
+  availlibleSpawnCase: []
+  tileRepresentingIt: {fileID: 0}
   northRoom: {fileID: 0}
   southRoom: {fileID: 0}
   eastRoom: {fileID: 0}

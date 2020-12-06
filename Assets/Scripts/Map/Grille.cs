@@ -77,6 +77,25 @@ public class Grille : MonoBehaviour
             throw new ExeptionGrille("Out of Grid");
         return m_TilesList[a_GridPos.x, a_GridPos.y];
     }
+    public void replaceTile(GameObject replaceTile, Vector2Int position)
+    {
+        Case toReplace = GetTile(position);
+
+        if (toReplace != null )
+        {
+            Destroy(toReplace.gameObject);
+
+        }
+        GameObject t_NewTileGo = Instantiate(replaceTile, GridToWorld(position), Quaternion.identity);
+        //Position
+        float t_CellSize = CellSize;
+        Sprite t_Sprite = t_NewTileGo.GetComponent<SpriteRenderer>().sprite;
+        float t_Scale = t_CellSize / t_Sprite.bounds.size.x;
+        t_NewTileGo.transform.localScale = new Vector3(t_Scale, t_Scale, t_Scale);
+        t_NewTileGo.GetComponent<Case>().GridPos = position;
+        t_NewTileGo.transform.parent = this.transform;
+    }
+
     public void replaceTile(GameObject replaceTile,Vector2Int position, CasePortail.TypePortail type)
     {
         Case toReplace = GetTile(position);
