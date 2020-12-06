@@ -13,6 +13,7 @@ public class Room : MonoBehaviour
     public List<Ennemis> ennemis;
     public GameObject computer;
     public List<Case> availlibleSpawnCase;
+    public GameObject tileRepresentingIt;
 
     private bool isDone = false;
 
@@ -50,7 +51,6 @@ public class Room : MonoBehaviour
             {
                 if(isDone == false)
                 {
-                    Debug.Log("Test");
                     int random = UnityEngine.Random.Range(0, availlibleSpawnCase.Count);
                     Vector3 position = transform.GetComponent<Grille>().GridToWorld(availlibleSpawnCase[random].GridPos);
                     position.z = -0.5f;

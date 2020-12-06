@@ -8,6 +8,8 @@ public class EnnemisDistance : Ennemis
     public GameObject ennemieProjectile;
     public float projectileForce = 20f;
     public Transform shootPoint;
+    [SerializeField] private float cadenceDeTir = 0.7f; // cadence de tire, le spred, le monbre de balle, les degas
+    private float lastShot;
     public override void SeDeplacer()
     {
         shootPoint.transform.LookAt(target.position,-Vector3.forward);
@@ -25,7 +27,6 @@ public class EnnemisDistance : Ennemis
             reachedEndOfPath = false;
         }
         float dist = Vector3.Distance(target.position, transform.position);
-        Debug.Log(dist - 25 < distanceToShoot);
         if (dist - 25 > distanceToShoot)
         {
             Vector2 direction = ((Vector2)path.vectorPath[currentWaypoint] - rb.position).normalized;
@@ -39,9 +40,15 @@ public class EnnemisDistance : Ennemis
         }
         else
         {
-            GameObject bullet = Instantiate(ennemieProjectile, shootPoint.position, shootPoint.rotation);
-            Rigidbody2D rb = bullet.GetComponent<Rigidbody2D>();
-            rb.AddForce(shootPoint.up * projectileForce, ForceMode2D.Impulse);
+            float time = Time.time;
+            if (time - lastShot >= cadenceDeTir)
+            {
+                lastShot = time;
+              
+                //GameObject bullet = Instantiate(ennemieProjectile, shootPoint.position, shootPoint.rotation);
+                //Rigidbody2D rb = bullet.GetComponent<Rigidbody2D>();
+                //rb.AddForce(shootPoint.up * projectileForce, ForceMode2D.Impulse);
+            }
         }
     }
 }
