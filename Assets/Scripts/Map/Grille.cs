@@ -80,8 +80,12 @@ public class Grille : MonoBehaviour
     public void replaceTile(GameObject replaceTile, Vector2Int position)
     {
         Case toReplace = GetTile(position);
-        Destroy(toReplace.gameObject);
 
+        if (toReplace != null )
+        {
+            Destroy(toReplace.gameObject);
+
+        }
         GameObject t_NewTileGo = Instantiate(replaceTile, GridToWorld(position), Quaternion.identity);
         //Position
         float t_CellSize = CellSize;
