@@ -24,6 +24,13 @@ public class Room : MonoBehaviour
         {
             isClear = true;
         }
+        if (isClear)
+        {
+            if(typeRoom == RoomType.BossRoom)
+            {
+
+            }
+        }
     }
 
 }
