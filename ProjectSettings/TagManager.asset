@@ -7,6 +7,7 @@ TagManager:
   - Portal
   - Objet
   - Bullet
+  - Ennemi
   layers:
   - Default
   - TransparentFX
