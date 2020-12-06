@@ -13,12 +13,7 @@ public class FadeInOut : MonoBehaviour
         fadeOut(2);
 
     }
-    public IEnumerator Fade()
-    {
-        fadeIn(1);
-        yield return new WaitForSeconds(1f);
-        fadeOut(1);
-    }
+
     public void fadeIn(int time)
     {
         blackFade.CrossFadeAlpha(1, time, false);
