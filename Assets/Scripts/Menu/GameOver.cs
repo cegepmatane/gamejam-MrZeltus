@@ -5,6 +5,9 @@ public class GameOver : MonoBehaviour
 {
     [SerializeField] private GameObject canvas;
     [SerializeField] public bool isDead;
+
+    public static GameOver Instance;
+
     public void Update()
     {
         if (isDead == true)

@@ -17,11 +17,11 @@ GameObject:
   - component: {fileID: -6892073266031348854}
   m_Layer: 0
   m_Name: EnnemieTest
-  m_TagString: Untagged
+  m_TagString: Ennemi
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &5236024847784744232
 Transform:
   m_ObjectHideFlags: 0
@@ -31,7 +31,7 @@ Transform:
   m_GameObject: {fileID: 5236024847784744237}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0.20656854, y: 2.67, z: -26.87227}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.1887907, y: 1.1887907, z: 1.1887907}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0

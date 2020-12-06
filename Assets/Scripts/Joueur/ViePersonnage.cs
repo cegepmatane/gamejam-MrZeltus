@@ -50,6 +50,6 @@ public class ViePersonnage : MonoBehaviour
 
     private void Die()
     {
-        
+        GameOver.Instance.;
     }
 }
