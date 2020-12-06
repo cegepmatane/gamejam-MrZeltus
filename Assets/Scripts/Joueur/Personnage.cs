@@ -3,6 +3,7 @@
 [RequireComponent(typeof(Rigidbody))]
 public class Personnage : MonoBehaviour
 {
+    public static Personnage Instance;
     public Rigidbody2D body;
     public Camera cam;
 
@@ -11,7 +12,12 @@ public class Personnage : MonoBehaviour
 
     public float runSpeed = 10.0f;
 
-
+    public void Awake()
+    {
+        if (Instance != null)
+            Debug.LogError("Instance already exist");
+        Instance = this;
+    }
     void Start()
     {
         body = GetComponent<Rigidbody2D>();

@@ -8,17 +8,17 @@ public class Ennemis : MonoBehaviour
     public float speed = 200f;
     public float nextWaypointDistance = 3f;
 
-    Pathfinding.Path path;
-    int currentWaypoint = 0;
-    bool reachedEndOfPath;
+    public Pathfinding.Path path;
+    public int currentWaypoint = 0;
+    public bool reachedEndOfPath;
 
-    Seeker seeker;
-    Rigidbody2D rb;
+    public Seeker seeker;
+    public Rigidbody2D rb;
     private void Start()
     {
         seeker = GetComponent<Seeker>();
         rb = GetComponent<Rigidbody2D>();
-
+        target = Personnage.Instance.transform;
         InvokeRepeating("UpdatePath", 0f, 0.05f);
     }
 
@@ -40,11 +40,16 @@ public class Ennemis : MonoBehaviour
 
     private void Update()
     {
-       if(path == null)
+        SeDeplacer();
+    }
+
+    public virtual void SeDeplacer()
+    {
+        if (path == null)
         {
             return;
         }
-       if(currentWaypoint >= path.vectorPath.Count)
+        if (currentWaypoint >= path.vectorPath.Count)
         {
             reachedEndOfPath = true;
             return;
@@ -56,11 +61,10 @@ public class Ennemis : MonoBehaviour
         Vector2 direction = ((Vector2)path.vectorPath[currentWaypoint] - rb.position).normalized;
         Vector2 force = direction * speed * Time.deltaTime;
         rb.AddForce(force);
-        float distance = Vector2.Distance(rb.position,path.vectorPath[currentWaypoint]);
-        if(distance < nextWaypointDistance)
+        float distance = Vector2.Distance(rb.position, path.vectorPath[currentWaypoint]);
+        if (distance < nextWaypointDistance)
         {
             currentWaypoint++;
         }
     }
-
 }
