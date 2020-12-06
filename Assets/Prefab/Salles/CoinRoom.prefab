@@ -278,6 +278,7 @@ MonoBehaviour:
   GridColor: {r: 0.06666666, g: 0.972549, b: 0.3695021, a: 1}
   ShowGrid: 1
   TilesList: []
+  portails: []
   AvailibleTime:
   - {fileID: 5499746345211718438, guid: e5bf9c1ed003df8449614890d8e472e9, type: 3}
   - {fileID: 3432582511995709451, guid: c0654deaa2acd384196e6437ed7e4ec3, type: 3}
@@ -299,8 +300,9 @@ MonoBehaviour:
   roomPos: {x: 0, y: 0}
   isClear: 0
   ennemis: []
-  computer: {fileID: 0}
+  computer: {fileID: 450785570754445582, guid: 52141b932e774634d82c4c6725f87ddc, type: 3}
   availlibleSpawnCase: []
+  tileRepresentingIt: {fileID: 0}
   northRoom: {fileID: 0}
   southRoom: {fileID: 0}
   eastRoom: {fileID: 0}

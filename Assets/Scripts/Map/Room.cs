@@ -11,7 +11,7 @@ public class Room : MonoBehaviour
     public Vector2Int roomPos;
     public bool isClear =false;
     public List<Ennemis> ennemis;
-    public GameObject computer;
+    public GameObject victoire;
     public List<Case> availlibleSpawnCase;
 
 
@@ -57,7 +57,8 @@ public class Room : MonoBehaviour
                     int random = UnityEngine.Random.Range(0, availlibleSpawnCase.Count);
                     Vector3 position = transform.GetComponent<Grille>().GridToWorld(availlibleSpawnCase[random].GridPos);
                     position.z = -0.5f;
-                    Instantiate(computer, position, Quaternion.identity);
+                    GameObject levelEnd =Instantiate(victoire, position, Quaternion.identity);
+                    levelEnd.transform.parent = this.transform;
                     isDone = true;
                 }
                

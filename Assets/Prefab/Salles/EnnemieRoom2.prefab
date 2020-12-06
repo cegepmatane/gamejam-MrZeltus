@@ -1559,6 +1559,7 @@ MonoBehaviour:
   GridColor: {r: 0.06666666, g: 0.972549, b: 0.3695021, a: 1}
   ShowGrid: 1
   TilesList: []
+  portails: []
   AvailibleTime:
   - {fileID: 5499746345211718438, guid: e5bf9c1ed003df8449614890d8e472e9, type: 3}
   - {fileID: 3432582511995709451, guid: c0654deaa2acd384196e6437ed7e4ec3, type: 3}

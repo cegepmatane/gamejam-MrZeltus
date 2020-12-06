@@ -305,7 +305,7 @@ MonoBehaviour:
   roomPos: {x: 0, y: 0}
   isClear: 0
   ennemis: []
-  computer: {fileID: 0}
+  computer: {fileID: 450785570754445582, guid: 52141b932e774634d82c4c6725f87ddc, type: 3}
   availlibleSpawnCase: []
   tileRepresentingIt: {fileID: 0}
   northRoom: {fileID: 0}

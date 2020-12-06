@@ -16,6 +16,9 @@ public class GameManager : MonoBehaviour
     [SerializeField]
     Transform player;
     List<Room> allRooms;
+    GameObject[] objects;
+    GameObject[] ennemies;
+    GameObject[] coins;
     public FadeInOut fade;
     public AstarPath pathfinder;
     public GameObject computer;
@@ -68,6 +71,7 @@ public class GameManager : MonoBehaviour
     public IEnumerator Fade()
     {
         fade.fadeIn(1);
+        GetObjects();
         yield return new WaitForSeconds(1f);
         DeactivateAllRoom(newCurrentRoom);
         MoveRoom(newCurrentRoom);
@@ -140,7 +144,7 @@ public class GameManager : MonoBehaviour
         allRooms = spawnedRoom;
         foreach (Room room in spawnedRoom)
         {
-            room.computer = computer;
+            room.victoire = computer;
         }
         GetFirstRoom();
         DeactivateAllRoom(firstRoom);
@@ -157,6 +161,46 @@ public class GameManager : MonoBehaviour
         foreach (CasePortail portail in laGrille.portails)
         {
             portail.LoadCollider();
+        }
+    }
+    void GetObjects()
+    {
+        GetCoin();
+        GetItem();
+        GetEnnemie();
+    }
+    void GetItem()
+    {
+        objects = GameObject.FindGameObjectsWithTag("Objet");
+        foreach (GameObject item in objects)
+        {
+            Debug.Log("Test");
+            if(item.transform.parent == null)
+            {
+                item.transform.parent = currentRoom.transform;
+            }
+        }
+    }
+    void GetEnnemie()
+    {
+        ennemies = GameObject.FindGameObjectsWithTag("Ennemi");
+        foreach (GameObject item in ennemies)
+        {
+            if (item.transform.parent == null)
+            {
+                item.transform.parent = currentRoom.transform;
+            }
+        }
+    }
+    void GetCoin()
+    {
+        coins = GameObject.FindGameObjectsWithTag("Coin");
+        foreach (GameObject item in coins)
+        {
+            if (item.transform.parent == null)
+            {
+                item.transform.parent = currentRoom.transform;
+            }
         }
     }
 }

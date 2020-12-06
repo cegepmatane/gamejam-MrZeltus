@@ -108,7 +108,9 @@ public class Grille : MonoBehaviour
         Destroy(toReplace.gameObject);
 
         GameObject t_NewTileGo = Instantiate(replaceTile,GridToWorld(position),Quaternion.identity);
+
         t_NewTileGo.GetComponent<CasePortail>().typePortail = type;
+
         //Position
         float t_CellSize = CellSize;
         Sprite t_Sprite = t_NewTileGo.GetComponent<SpriteRenderer>().sprite;

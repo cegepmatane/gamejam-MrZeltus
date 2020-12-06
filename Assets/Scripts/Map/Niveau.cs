@@ -10,6 +10,7 @@ public class Niveau : MonoBehaviour
     public GameObject tilePortail;
     private List<GameObject> availiblePlayRoom = new List<GameObject>();
     private List<GameObject> availibleBossRoom = new List<GameObject>();
+    private GameObject availibleStartRoom;
 
     private List<int> isDirectionAvailible;
 
@@ -98,6 +99,9 @@ public class Niveau : MonoBehaviour
                 {
                     currentRoom = Instantiate(availibleBossRoom[0], new Vector3(positionSpawn.x, positionSpawn.y, 0), Quaternion.identity);
                 }
+            }else if (i == 0 && availibleStartRoom != null)
+            {
+                currentRoom = Instantiate(availibleStartRoom, new Vector3(positionSpawn.x, positionSpawn.y, 0), Quaternion.identity);
             }
             else
             {
