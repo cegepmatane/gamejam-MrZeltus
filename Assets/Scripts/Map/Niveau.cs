@@ -5,10 +5,12 @@ using UnityEngine;
 public class Niveau : MonoBehaviour
 {
     public static Niveau Instance;
+
     public List<GameObject> availibleRoom;
     public GameObject tilePortail;
     private List<GameObject> availiblePlayRoom = new List<GameObject>();
     private List<GameObject> availibleBossRoom = new List<GameObject>();
+
     private List<int> isDirectionAvailible;
 
     public int levelSize = 10;
@@ -21,6 +23,8 @@ public class Niveau : MonoBehaviour
     private GameObject currentRoom;
     public void Awake()
     {
+        if (Instance != this)
+            Debug.LogError("Instance of Niveau already exist");
         Instance = this;
     }
 
@@ -31,6 +35,7 @@ public class Niveau : MonoBehaviour
         FindAvailibleRoom();
         GenerateRoom();
         SpawnPortail();
+        //Map.Instance.LoadMap(availibleRoom);
     }
 
     void GenerateRoom()

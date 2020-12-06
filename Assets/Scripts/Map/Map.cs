@@ -3,13 +3,29 @@ using UnityEngine;
 
 public class Map : MonoBehaviour
 {
+    public static Map Instance;
     Grille grilleMap;
-    int offset = 10;
-    public void LoadMap(List<Room> rooms)
+    Vector2Int offsetRoom = new Vector2Int(10,10);
+    public GameObject defaultTile;
+    private void Awake()
     {
-        foreach (Room room in rooms)
+        if (Instance != this)
+            Debug.LogError("Instance of Niveau already exist");
+        Instance = this;
+        grilleMap = transform.GetComponent<Grille>();
+    }
+    public void LoadMap(List<GameObject> rooms)
+    {
+        foreach (GameObject gameObject in rooms)
         {
-            grilleMap.replaceTile(room.tileRepresentingIt, room.roomPos);
+            Room room = gameObject.GetComponent<Room>();
+            GameObject tileToSpawn = room.tileRepresentingIt;
+            Debug.LogError("test");
+            if (room.tileRepresentingIt == null)
+            {
+                tileToSpawn = defaultTile;
+            }
+            grilleMap.replaceTile(tileToSpawn, room.roomPos + offsetRoom);
         }
     }
 }
