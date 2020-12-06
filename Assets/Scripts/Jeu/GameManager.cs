@@ -18,6 +18,7 @@ public class GameManager : MonoBehaviour
     List<Room> allRooms;
     public FadeInOut fade;
     public AstarPath pathfinder;
+    public GameObject computer;
     public void Awake()
     {
         Instance = this;
@@ -131,6 +132,10 @@ public class GameManager : MonoBehaviour
     internal void SetupGame(List<Room> spawnedRoom)
     {
         allRooms = spawnedRoom;
+        foreach (Room room in spawnedRoom)
+        {
+            room.computer = computer;
+        }
         GetFirstRoom();
         DeactivateAllRoom(firstRoom);
         MoveRoom(firstRoom);
