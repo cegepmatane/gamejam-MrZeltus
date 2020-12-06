@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Bullet : MonoBehaviour
+public class TirerLaser : MonoBehaviour
 {
     public GameObject hitEffect;
 
@@ -10,7 +10,7 @@ public class Bullet : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.transform.tag != "Player") 
+        if (collision.transform.tag != "Player")
         {
             GameObject effect = Instantiate(hitEffect, transform.position, Quaternion.identity);
             Animator.SetBool("aTouche", true);
