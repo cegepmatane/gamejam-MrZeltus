@@ -32,7 +32,7 @@ public class Personnage : MonoBehaviour
 
         if (col.transform.tag == "Ennemi")
         {
-
+            
         }
     }
     private void FixedUpdate()

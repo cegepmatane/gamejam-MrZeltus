@@ -5,7 +5,6 @@ using UnityEngine;
 public class TirerLaser : MonoBehaviour
 {
     public GameObject hitEffect;
-    public int Degats = 3;
 
     public Animator Animator;
 

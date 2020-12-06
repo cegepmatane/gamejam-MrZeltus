@@ -6,7 +6,6 @@ public class Tirer : MonoBehaviour
 {
     public Transform firePoint;
     public GameObject bulletPrefab;
-    public int Degats = 10;
 
     public float bulletForce = 20f;
     
