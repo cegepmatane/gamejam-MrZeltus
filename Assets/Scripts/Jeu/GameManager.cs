@@ -28,6 +28,18 @@ public class GameManager : MonoBehaviour
         {
 
         }
+        if (portal == currentRoom.southRoom)
+        {
+
+        }
+        if (portal == currentRoom.eastRoom)
+        {
+
+        }
+        if (portal == currentRoom.westRoom)
+        {
+
+        }
     }
 
     void GetFirstRoom()
