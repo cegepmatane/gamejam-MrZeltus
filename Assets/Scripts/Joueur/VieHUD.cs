@@ -21,16 +21,17 @@ public class VieHUD : MonoBehaviour
         m_WinText.text = "";
     }
 
+    //TODO texte victoire
     public void ChangeScore(int a_CollectableValue)
     {
         a_Score += a_CollectableValue;
         m_TextCollectible.text = ": " + a_Score.ToString();
 
-        if (a_Score == 11)
+       /* if (a_Score == 11)
         {
             m_WinText.text = "VICTOIRE";
 
-        }
+        }*/
     }
 
     public void SetVie(int vie)

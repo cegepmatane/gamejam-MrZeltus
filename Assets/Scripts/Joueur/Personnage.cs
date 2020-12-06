@@ -30,7 +30,7 @@ public class Personnage : MonoBehaviour
         movement.y = Input.GetAxisRaw("Vertical");
         mousePos = cam.ScreenToWorldPoint(Input.mousePosition);
     }
-    public void OnCollisionEnter2D(Collision2D  col)
+    private void OnCollisionEnter2D(Collision2D col)
     {
         if(col.transform.tag == "Portal")
         {
@@ -40,6 +40,22 @@ public class Personnage : MonoBehaviour
         if (col.transform.tag == "Ennemi")
         {
             transform.GetComponent<ViePersonnage>().TakeDamage(10);
+        }
+    }
+
+    private void OnTriggerEnter2D(Collider2D col)
+    {
+        int CoinValue = 1;
+        if (col.transform.tag == "coinmaster")
+        {
+            col.transform.parent.GetComponent<CarteCredit>().ApparitionCoins();
+            VieHUD.instance.ChangeScore(CoinValue);
+            Destroy(col.gameObject);
+        }
+        if (col.transform.tag == "Coin")
+        {
+            VieHUD.instance.ChangeScore(CoinValue);
+            Destroy(col.gameObject);
         }
     }
     private void FixedUpdate()

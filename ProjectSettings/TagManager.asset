@@ -8,6 +8,8 @@ TagManager:
   - Objet
   - Bullet
   - Ennemi
+  - Coin
+  - coinmaster
   layers:
   - Default
   - TransparentFX
