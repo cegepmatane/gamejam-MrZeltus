@@ -12,6 +12,7 @@ TagManager:
   - coinmaster
   - ZoneActivable
   - Victoire
+  - Projectile
   layers:
   - Default
   - TransparentFX

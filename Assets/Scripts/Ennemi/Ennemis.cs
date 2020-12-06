@@ -12,6 +12,8 @@ public class Ennemis : MonoBehaviour
     public int currentWaypoint = 0;
     public bool reachedEndOfPath;
 
+    public int dammage = 5;
+
     public Seeker seeker;
     public Rigidbody2D rb;
     private void Start()

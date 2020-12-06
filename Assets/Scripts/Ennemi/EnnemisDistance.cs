@@ -12,7 +12,10 @@ public class EnnemisDistance : Ennemis
     private float lastShot;
     public override void SeDeplacer()
     {
-        shootPoint.transform.LookAt(target.position,-Vector3.forward);
+        Vector2 lookDir = target.position - transform.position;
+        float angle = Mathf.Atan2(lookDir.y, lookDir.x) * Mathf.Rad2Deg+90f;
+        rb.rotation = angle;
+
         if (path == null)
         {
             return;
@@ -27,8 +30,10 @@ public class EnnemisDistance : Ennemis
             reachedEndOfPath = false;
         }
         float dist = Vector3.Distance(target.position, transform.position);
-        if (dist - 25 > distanceToShoot)
+
+        if (dist  > distanceToShoot)
         {
+
             Vector2 direction = ((Vector2)path.vectorPath[currentWaypoint] - rb.position).normalized;
             Vector2 force = direction * speed * Time.deltaTime;
             rb.AddForce(force);
@@ -44,10 +49,9 @@ public class EnnemisDistance : Ennemis
             if (time - lastShot >= cadenceDeTir)
             {
                 lastShot = time;
-              
-                //GameObject bullet = Instantiate(ennemieProjectile, shootPoint.position, shootPoint.rotation);
-                //Rigidbody2D rb = bullet.GetComponent<Rigidbody2D>();
-                //rb.AddForce(shootPoint.up * projectileForce, ForceMode2D.Impulse);
+                GameObject bullet = Instantiate(ennemieProjectile, shootPoint.position, shootPoint.rotation);
+                Rigidbody2D rb = bullet.GetComponent<Rigidbody2D>();
+                rb.AddForce(-shootPoint.up * projectileForce, ForceMode2D.Impulse);
             }
         }
     }
