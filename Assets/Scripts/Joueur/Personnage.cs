@@ -1,94 +1,39 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿/* Joseph Breslin 2018
+* Rigidbody and transform movement script for 2D player */
+
 using UnityEngine;
 
+[RequireComponent(typeof(Rigidbody))]
 public class Personnage : MonoBehaviour
 {
-    public LayerMask mask;
-    public enum CaseType { Sol, Mur };
-    public CaseType typeCase;
-    public Grille grilleActuelle;
+    public Rigidbody2D body;
+    public Camera cam;
 
-    private Vector2Int DeplacerVers;
+    Vector2 movement;
+    Vector2 mousePos;
 
-    public static Personnage Instance;
+    public float runSpeed = 10.0f;
 
-    private void Awake()
+    void Start()
     {
-        if(Instance != null)
-            Debug.Log("Une instance de personnage a déjà été créée");
-        Instance = this;
+        body = GetComponent<Rigidbody2D>();
     }
-    private void Update()
+
+    void Update()
     {
-        
-        if (Input.GetButtonDown("Droite"))
-        {
-            DeplacerVers = new Vector2Int(1, 0);
-            SeDeplacer(DeplacerVers);
-        }
+        movement.x = Input.GetAxisRaw("Horizontal");
+        movement.y = Input.GetAxisRaw("Vertical");
 
-        if (Input.GetButtonDown("Gauche"))
-        {
-            DeplacerVers = new Vector2Int(-1, 0);
-            SeDeplacer(DeplacerVers);
-        }
-
-        if (Input.GetButtonDown("Avancer"))
-        {
-            DeplacerVers = new Vector2Int(0, 1);
-            SeDeplacer(DeplacerVers);
-        }
-
-        if (Input.GetButtonDown("Reculer"))
-        {
-            DeplacerVers = new Vector2Int(0, -1);
-            SeDeplacer(DeplacerVers);
-        }
+        mousePos = cam.ScreenToWorldPoint(Input.mousePosition);
 
     }
 
-    private void SeDeplacer(Vector2Int position)
+    private void FixedUpdate()
     {
-        if (DeplacementPossible(position))
-        {
-            DeplacerJoueur(position);
-            //EnnemiFocus.Instance.FocusJoueur();
+        body.MovePosition(body.position + movement * runSpeed * Time.fixedDeltaTime);
 
-        }
-        else
-        {
-
-        }
-    }
-
-    private bool DeplacementPossible(Vector2Int position)
-    {
-        Vector2Int positionJoueur = grilleActuelle.WorldToGrid(transform.position);
-
-        foreach (Case tuile in grilleActuelle.TilesList)
-        {
-            if (tuile.GridPos == positionJoueur + position)
-            {
-                if(tuile.typeCase.ToString() == "Sol")
-                {
-                    return true;
-                }
-                else
-                {
-                    return false;
-                }
-            }
-        }
-
-        return false;
-    }
-
-    private void DeplacerJoueur(Vector2Int position)
-    {
-        Vector2Int positionTemp = grilleActuelle.WorldToGrid(transform.position) + position;
-        Vector3 positionJoueur = grilleActuelle.GridToWorld(positionTemp);
-        positionJoueur.z = -0.5f;
-        transform.position = positionJoueur;
+        Vector2 lookDir = mousePos - body.position;
+        float angle = Mathf.Atan2(lookDir.y, lookDir.x) * Mathf.Rad2Deg - 90f;
+        body.rotation = angle;
     }
 }
