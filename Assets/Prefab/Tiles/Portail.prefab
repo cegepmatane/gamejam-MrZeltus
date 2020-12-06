@@ -9,9 +9,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4343729916113700383}
-  - component: {fileID: 8748867199453768563}
   - component: {fileID: 3894654611524009564}
   - component: {fileID: 1249214918567513677}
+  - component: {fileID: 6810654327051476457}
   m_Layer: 0
   m_Name: Portail
   m_TagString: Portal
@@ -33,21 +33,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &8748867199453768563
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9031909563584341956}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8bedc05361e68d24fa0a45ad07d153a9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  GridPos: {x: 0, y: 0}
-  typeCase: 2
-  BaseCost: 0
 --- !u!212 &3894654611524009564
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -125,3 +110,22 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.64, y: 0.64}
   m_EdgeRadius: 0
+--- !u!114 &6810654327051476457
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9031909563584341956}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0bde5341e6517804d968ee452ba5a0ab, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  GridPos: {x: 0, y: 0}
+  typeCase: 2
+  BaseCost: 0
+  isPortalNorth: 0
+  isPortalSouth: 0
+  isPortalEast: 0
+  isPortalWest: 0

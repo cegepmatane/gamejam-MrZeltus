@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 5236024847784744231}
   - component: {fileID: 473954179}
   - component: {fileID: 473954180}
+  - component: {fileID: -6892073266031348854}
   m_Layer: 0
   m_Name: EnnemieTest
   m_TagString: Untagged
@@ -176,3 +177,22 @@ MonoBehaviour:
   target: {fileID: 0}
   speed: 400
   nextWaypointDistance: 3
+--- !u!114 &-6892073266031348854
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5236024847784744237}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 63725d8acddc92c40ae43652561d3fe5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ennemis: {fileID: 473954180}
+  ListeObjet:
+  - {fileID: 1812452527824222052, guid: a320acab1d0671044a3866d62d304eb9, type: 3}
+  - {fileID: 4895124056303468088, guid: 9eb1c3edcc636b34ea350778052eb7c8, type: 3}
+  - {fileID: 3059716421308801280, guid: 24562fa0ea262a94e82633dfc3952023, type: 3}
+  - {fileID: 7000995100450292790, guid: 4591a882db0e7014f9acb2e49a0cd8f6, type: 3}
+  EnnemieHealth: 100

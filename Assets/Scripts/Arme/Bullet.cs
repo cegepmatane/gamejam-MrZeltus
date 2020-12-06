@@ -5,8 +5,9 @@ using UnityEngine;
 public class Bullet : MonoBehaviour
 {
     public GameObject hitEffect;
-
     public Animator Animator;
+
+    [SerializeField] public int dommage = 10;
 
     private void OnTriggerEnter2D(Collider2D collision)
     {

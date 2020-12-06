@@ -20,7 +20,7 @@ public class Inventaire : MonoBehaviour
         
         for (int i = 0; i < emplacementList.Length; i++)
         {
-            if (emplacementList[i].item == null && emplacementList[i].typeEmplacement.ToString() == item.itemType.ToString())
+            if (emplacementList[i].item == null && emplacementList[i].typeEmplacement.ToString() == item.itemType.ToString() && item.transform.tag == "Objet")
             {
                 emplacementList[i].item = item;
                 emplacementList[i].Afficher();
@@ -70,13 +70,6 @@ public class Inventaire : MonoBehaviour
                 return;
             }
         }
-    }
-
-    private void AppliquerForce()
-    {
-        Rigidbody2D RB = item.GetComponent<Rigidbody2D>();
-        Vector3 direction = RB.transform.position - transform.position;
-        RB.AddForceAtPosition(direction.normalized, transform.position);
     }
 
     public void detruireItem(Emplacement emplacement,Item item)

@@ -1182,7 +1182,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5236024847784744237, guid: b9f921f341f79d14e85be032b3a9bcbc, type: 3}
       propertyPath: m_TagString
-      value: Ennemi
+      value: Untagged
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b9f921f341f79d14e85be032b3a9bcbc, type: 3}
