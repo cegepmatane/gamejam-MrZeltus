@@ -6,6 +6,7 @@ public class Inventaire : MonoBehaviour
     private Emplacement[] emplacementList;
     public static Inventaire Instance;
 
+    public Transform joueur;
     
 
     public Item item;
@@ -24,6 +25,7 @@ public class Inventaire : MonoBehaviour
                 emplacementList[i].item = item;
                 emplacementList[i].Afficher();
                 item.transform.gameObject.SetActive(false);
+                item.transform.position = joueur.transform.position;
                 return;
             }
         }
@@ -63,10 +65,18 @@ public class Inventaire : MonoBehaviour
 
                 emplacementList[i].NePlusAfficher();
                 emplacementList[i].item.transform.gameObject.SetActive(true);
+                JetterObjet.Instance.LancerObjet(emplacementList[i].item, joueur.position);
                 emplacementList[i].item = null;
                 return;
             }
         }
+    }
+
+    private void AppliquerForce()
+    {
+        Rigidbody2D RB = item.GetComponent<Rigidbody2D>();
+        Vector3 direction = RB.transform.position - transform.position;
+        RB.AddForceAtPosition(direction.normalized, transform.position);
     }
 
     public void detruireItem(Emplacement emplacement,Item item)
