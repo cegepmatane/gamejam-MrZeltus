@@ -17,16 +17,18 @@ public class Inventaire : MonoBehaviour
     }
     public void Recuperer(Item item)
     {
-        
         for (int i = 0; i < emplacementList.Length; i++)
         {
-            if (emplacementList[i].item == null && emplacementList[i].typeEmplacement.ToString() == item.itemType.ToString() && item.transform.tag == "Objet")
+            if (item != null)
             {
-                emplacementList[i].item = item;
-                emplacementList[i].Afficher();
-                item.transform.gameObject.SetActive(false);
-                item.transform.position = joueur.transform.position;
-                return;
+                if (emplacementList[i].item == null && emplacementList[i].typeEmplacement.ToString() == item.itemType.ToString())
+                {
+                    emplacementList[i].item = item;
+                    emplacementList[i].Afficher();
+                    item.transform.gameObject.SetActive(false);
+                    item.transform.position = joueur.transform.position;
+                    return;
+                }
             }
         }
     }
