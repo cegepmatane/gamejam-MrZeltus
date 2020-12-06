@@ -12,8 +12,8 @@ GameObject:
   - component: {fileID: 6553570913361221322}
   - component: {fileID: 6413703351317109427}
   - component: {fileID: 6560154219743961406}
-  - component: {fileID: -9215236505012065662}
   - component: {fileID: 7283193584548662035}
+  - component: {fileID: 462902245864406948}
   m_Layer: 0
   m_Name: Bullet
   m_TagString: Untagged
@@ -133,20 +133,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 3.57}
   m_EdgeRadius: 0
---- !u!114 &-9215236505012065662
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6553570913361221323}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7825fdc8e65db7945868e6f4810607df, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  hitEffect: {fileID: 5686726501851777297, guid: f842aa31c4f2d25499ad207b87388c03, type: 3}
-  Animator: {fileID: 7283193584548662035}
 --- !u!95 &7283193584548662035
 Animator:
   serializedVersion: 3
@@ -166,3 +152,17 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &462902245864406948
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6553570913361221323}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 239d209183a4dc54f97e35e0c983cdb5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hitEffect: {fileID: 5686726501851777297, guid: f842aa31c4f2d25499ad207b87388c03, type: 3}
+  Animator: {fileID: 7283193584548662035}

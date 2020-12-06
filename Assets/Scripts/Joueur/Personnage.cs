@@ -1,7 +1,4 @@
-﻿/* Joseph Breslin 2018
-* Rigidbody and transform movement script for 2D player */
-
-using UnityEngine;
+﻿using UnityEngine;
 
 [RequireComponent(typeof(Rigidbody))]
 public class Personnage : MonoBehaviour
@@ -17,6 +14,7 @@ public class Personnage : MonoBehaviour
     void Start()
     {
         body = GetComponent<Rigidbody2D>();
+        cam = Camera.main;
     }
 
     void Update()
@@ -30,6 +28,11 @@ public class Personnage : MonoBehaviour
         if(col.transform.tag == "Portal")
         {
             GameManager.Instance.ChangeRoom(col.transform.gameObject);
+        }
+
+        if (col.transform.tag == "Ennemi")
+        {
+
         }
     }
     private void FixedUpdate()
