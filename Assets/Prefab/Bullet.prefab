@@ -74,7 +74,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: af6ec52ac5bf7cb43b900a7f219c638d, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -145,7 +145,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7825fdc8e65db7945868e6f4810607df, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Joueur: {fileID: 5590472365322487331, guid: 2c02abc897d31c449b1f0c0b92d18955, type: 3}
   hitEffect: {fileID: 5686726501851777297, guid: f842aa31c4f2d25499ad207b87388c03, type: 3}
   Animator: {fileID: 7283193584548662035}
 --- !u!95 &7283193584548662035

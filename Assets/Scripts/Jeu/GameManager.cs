@@ -23,7 +23,6 @@ public class GameManager : MonoBehaviour
     }
     void GetFirstRoom()
     {
-        Debug.Log(Niveau.Instance.spawnedRoom.Count);
         firstRoom = Niveau.Instance.spawnedRoom[0];
     }
     void SpawnPlayer()
@@ -32,6 +31,17 @@ public class GameManager : MonoBehaviour
         player.position = grilleActuelle.GridToWorld(new Vector2Int(7,7));
 
     }
+    void DeactivateAllRoom(Room baseRoom)
+    {
+        foreach (Room room in allRooms)
+        {
+            if(room != baseRoom)
+            {
+                room.transform.gameObject.SetActive(false);
+            }
+        }
+    }
+
     // Update is called once per frame
     void Update()
     {
@@ -40,9 +50,9 @@ public class GameManager : MonoBehaviour
 
     internal void SetupGame(List<Room> spawnedRoom)
     {
-        Debug.Log("Number of room"+ spawnedRoom.Count);
-        //allRooms = spawnedRoom;
-        //GetFirstRoom();
-        //SpawnPlayer();
+        allRooms = spawnedRoom;
+        GetFirstRoom();
+        DeactivateAllRoom(firstRoom);
+        SpawnPlayer();
     }
 }

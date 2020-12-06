@@ -90,6 +90,7 @@ public class Grille : MonoBehaviour
         float t_Scale = t_CellSize / t_Sprite.bounds.size.x;
         t_NewTileGo.transform.localScale = new Vector3(t_Scale, t_Scale, t_Scale);
         t_NewTileGo.GetComponent<Case>().GridPos = position;
+        t_NewTileGo.transform.parent = this.transform;
     }
 
     public Vector3 GridToWorld(Vector2Int a_GridPos)

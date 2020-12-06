@@ -91,8 +91,10 @@ public class Niveau : MonoBehaviour
                     int randomRoom = Random.Range(0, availibleBossRoom.Count);
                     currentRoom = Instantiate(availibleBossRoom[randomRoom], new Vector3(positionSpawn.x, positionSpawn.y, 0), Quaternion.identity);
                 }
-
-                currentRoom = Instantiate(availibleBossRoom[0], new Vector3(positionSpawn.x, positionSpawn.y, 0), Quaternion.identity);
+                else
+                {
+                    currentRoom = Instantiate(availibleBossRoom[0], new Vector3(positionSpawn.x, positionSpawn.y, 0), Quaternion.identity);
+                }
             }
             else
             {
@@ -113,7 +115,7 @@ public class Niveau : MonoBehaviour
             Vector2Int currentRoomOffset = new Vector2Int(room.roomPos.x + offsetArray, room.roomPos.y + offsetArray);
             CheckForRoom(room, currentRoomOffset);
         }
-        //GameManager.Instance.SetupGame(spawnedRoom);
+        GameManager.Instance.SetupGame(spawnedRoom);
     }
 
     private void CheckForRoom(Room room,Vector2Int position)
