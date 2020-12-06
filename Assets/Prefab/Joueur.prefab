@@ -45,6 +45,7 @@ GameObject:
   - component: {fileID: 5687659708950748427}
   - component: {fileID: 1425169788}
   - component: {fileID: 278579695}
+  - component: {fileID: 2965204176257620557}
   m_Layer: 0
   m_Name: Joueur
   m_TagString: Player
@@ -216,3 +217,17 @@ MonoBehaviour:
   currentVie: 0
   barreVie: {fileID: 0}
   immunity: 2
+--- !u!114 &2965204176257620557
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5590472365322487331}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e73e820aae8f3444b58e9fd44224778, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  objet: {fileID: 0}
+  playerHit: 0
