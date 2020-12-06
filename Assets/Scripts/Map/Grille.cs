@@ -20,7 +20,11 @@ public class Grille : MonoBehaviour
 
     public void Awake()
     {
+        LoadTiles();
+    }
 
+    private void LoadTiles()
+    {
         TilesList = gameObject.GetComponentsInChildren<Case>();
         m_TilesList = new Case[ColumnCount, RowCount];
         foreach (Case tile in TilesList)
@@ -28,11 +32,8 @@ public class Grille : MonoBehaviour
             Vector2Int t_tilePos = WorldToGrid(tile.transform.position);
             tile.GridPos = t_tilePos;
             m_TilesList[t_tilePos.x, t_tilePos.y] = tile;
-        }   
+        }
     }
-
-
-
 
     private void OnDrawGizmosSelected()
     {
@@ -75,6 +76,10 @@ public class Grille : MonoBehaviour
     {
         if (a_GridPos.x < 0 || a_GridPos.x >= ColumnCount || a_GridPos.y < 0 || a_GridPos.y >= RowCount)
             throw new ExeptionGrille("Out of Grid");
+        if(TilesList.Length == 0)
+        {
+            LoadTiles();
+        }
         return m_TilesList[a_GridPos.x, a_GridPos.y];
     }
     public void replaceTile(GameObject replaceTile, Vector2Int position)
