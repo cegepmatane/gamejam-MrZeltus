@@ -23,8 +23,6 @@ public class Niveau : MonoBehaviour
     private GameObject currentRoom;
     public void Awake()
     {
-        if (Instance != this)
-            Debug.LogError("Instance of Niveau already exist");
         Instance = this;
     }
 
