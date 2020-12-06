@@ -47,6 +47,7 @@ public class Personnage : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D col)
     {
         int CoinValue = 1;
+
         if (col.transform.tag == "coinmaster")
         {
             col.transform.parent.GetComponent<CarteCredit>().ApparitionCoins();

@@ -9,11 +9,25 @@ public class CarteCredit : MonoBehaviour
     public Grille grilleActuelle;
     public List<Case> TuilePlacable;
     public int coinsNum = 5;
+    public List<GameObject> Coins;
+    public bool activerTimer = false;
+    public float time = 8.0f;
 
 
-
+    private void Update()
+    {
+        if (activerTimer == true)
+        {
+            time -= Time.deltaTime;
+            if (time <= 0.0f)
+            {
+                SupprimerCoin();
+            }
+        }
+    }
     public void ApparitionCoins()
     {
+        activerTimer = true;
         PlacementPossible();
         CreateCoins();
     }
@@ -26,6 +40,15 @@ public class CarteCredit : MonoBehaviour
             Vector3 positionSpawn = TuilePlacable[tuiles].transform.position;
             positionSpawn.z = -1f;
             GameObject coinClone = Instantiate(Coin, positionSpawn, Quaternion.identity);
+            Coins.Add(coinClone);
+        }
+    }
+
+    public void SupprimerCoin()
+    {
+        foreach (GameObject Coin in Coins)
+        {
+            Destroy(Coin);
         }
     }
 

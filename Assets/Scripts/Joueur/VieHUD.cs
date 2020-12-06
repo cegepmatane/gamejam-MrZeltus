@@ -19,6 +19,7 @@ public class VieHUD : MonoBehaviour
             instance = this;
 
         m_WinText.text = "";
+        m_TextCollectible.text = "";
     }
 
     //TODO texte victoire

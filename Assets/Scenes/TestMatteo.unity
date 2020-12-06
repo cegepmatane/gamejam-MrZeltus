@@ -587,6 +587,34 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 201545654687521, guid: 2e73f497ef2ef1840a705c4a09e56aa2, type: 3}
+      propertyPath: m_CullTransparentMesh
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 201545654687535, guid: 2e73f497ef2ef1840a705c4a09e56aa2, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 201545654687535, guid: 2e73f497ef2ef1840a705c4a09e56aa2, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 201545654687535, guid: 2e73f497ef2ef1840a705c4a09e56aa2, type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 201545654687535, guid: 2e73f497ef2ef1840a705c4a09e56aa2, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 201545654687535, guid: 2e73f497ef2ef1840a705c4a09e56aa2, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -43
+      objectReference: {fileID: 0}
+    - target: {fileID: 201545654687535, guid: 2e73f497ef2ef1840a705c4a09e56aa2, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -41
+      objectReference: {fileID: 0}
     - target: {fileID: 201545831723390, guid: 2e73f497ef2ef1840a705c4a09e56aa2, type: 3}
       propertyPath: m_Name
       value: HUD
