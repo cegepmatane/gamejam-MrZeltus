@@ -229,6 +229,10 @@ PrefabInstance:
       propertyPath: barreVie
       value: 
       objectReference: {fileID: 1324279678}
+    - target: {fileID: 278579695, guid: 2c02abc897d31c449b1f0c0b92d18955, type: 3}
+      propertyPath: m_Health
+      value: 20
+      objectReference: {fileID: 0}
     - target: {fileID: 5590472365322487329, guid: 2c02abc897d31c449b1f0c0b92d18955, type: 3}
       propertyPath: m_RootOrder
       value: 1
