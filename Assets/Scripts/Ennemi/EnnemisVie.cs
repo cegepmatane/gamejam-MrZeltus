@@ -12,7 +12,7 @@ public class EnnemisVie : MonoBehaviour
     {
       if (col.transform.tag == "Bullet")
         {
-            Debug.Log("l'ennemie toucher par une balle");
+            
             EnnemieHealth -= col.transform.GetComponent<Bullet>().dommage;
             EnnemieMort();
         }  
@@ -27,13 +27,14 @@ public class EnnemisVie : MonoBehaviour
     }
     
     public void DropObjet()
-    {
+    { 
         float dropRate = 0.25f;
         float dropChance = Random.Range(0, 1);
         if(dropChance <= dropRate)
         {
             int dropItem = Random.Range(0, ListeObjet.Count);
-            Instantiate(ListeObjet[dropItem], ennemis.transform.position, Quaternion.identity);
+            GameObject objetInstancier = Instantiate(ListeObjet[dropItem], ennemis.transform.position, Quaternion.identity);
+            JetterObjet.Instance.LancerObjet(objetInstancier.GetComponent<Item>(), ennemis.transform.position);
         }
     }
 }

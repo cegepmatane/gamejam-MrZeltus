@@ -166,4 +166,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hitEffect: {fileID: 5686726501851777297, guid: f842aa31c4f2d25499ad207b87388c03, type: 3}
   Animator: {fileID: 7283193584548662035}
-  dommage: 10
+  dommage: 20

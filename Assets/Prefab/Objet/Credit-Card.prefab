@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 1517476320298861362}
   m_Layer: 0
   m_Name: Credit-Card
-  m_TagString: Untagged
+  m_TagString: Objet
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -28,7 +28,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3059716421308801280}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -2.04, y: -2.01, z: -8.661209}
+  m_LocalPosition: {x: 0.85268617, y: -1.8054527, z: 0}
   m_LocalScale: {x: 5.094671, y: 5.094671, z: 5.094671}
   m_Children: []
   m_Father: {fileID: 0}
