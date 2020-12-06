@@ -297,6 +297,10 @@ MonoBehaviour:
   roomName: CoinRoom
   typeRoom: 3
   roomPos: {x: 0, y: 0}
+  isClear: 0
+  ennemis: []
+  computer: {fileID: 0}
+  availlibleSpawnCase: []
   northRoom: {fileID: 0}
   southRoom: {fileID: 0}
   eastRoom: {fileID: 0}
@@ -330,6 +334,9 @@ MonoBehaviour:
   grilleActuelle: {fileID: 7196866021452577428}
   TuilePlacable: []
   coinsNum: 5
+  Coins: []
+  activerTimer: 0
+  time: 8
 --- !u!1 &9158262258948997519
 GameObject:
   m_ObjectHideFlags: 0
@@ -23950,6 +23957,10 @@ PrefabInstance:
     - target: {fileID: 8912617835641611510, guid: fb18f29473f142946ac03bb082603d6a, type: 3}
       propertyPath: m_Name
       value: CoinMaster
+      objectReference: {fileID: 0}
+    - target: {fileID: 8912617835641611510, guid: fb18f29473f142946ac03bb082603d6a, type: 3}
+      propertyPath: m_TagString
+      value: coinmaster
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fb18f29473f142946ac03bb082603d6a, type: 3}
