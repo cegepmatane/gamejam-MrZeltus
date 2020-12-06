@@ -12,7 +12,7 @@ public class EnnemisVie : MonoBehaviour
     {
       if (col.transform.tag == "Bullet")
         {
-            
+       
             EnnemieHealth -= col.transform.GetComponent<Bullet>().dommage;
             EnnemieMort();
         }  
