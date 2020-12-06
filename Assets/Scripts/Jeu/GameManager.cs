@@ -23,6 +23,10 @@ public class GameManager : MonoBehaviour
     {
         Instance = this;
     }
+    public void Start()
+    {
+        player = Personnage.Instance.transform;
+    }
 
     // Start is called before the first frame update
     public void ChangeRoom(GameObject portal)

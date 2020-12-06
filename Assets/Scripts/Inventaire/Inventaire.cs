@@ -7,8 +7,6 @@ public class Inventaire : MonoBehaviour
     public static Inventaire Instance;
 
     public Transform joueur;
-    
-
     public Item item;
 
     public void Start()
@@ -83,6 +81,7 @@ public class Inventaire : MonoBehaviour
 
     public void UtiliserItem()
     {
+        
         for (int i = 0; i < emplacementList.Length; i++)
         {
             if (emplacementList[i].item != null && emplacementList[i].isSelected == true && emplacementList[i].typeEmplacement.ToString() == "Objet")
@@ -99,7 +98,6 @@ public class Inventaire : MonoBehaviour
             if (emplacementList[i].item != null && emplacementList[i].isSelected == true && emplacementList[i].typeEmplacement.ToString() == "Arme")
             {
                 string nom = emplacementList[i].item.name;
-                Debug.Log(nom);
                 emplacementList[i].item.attaquer(); // recuperer le nom de l'arme et de l'objet
             }
         }

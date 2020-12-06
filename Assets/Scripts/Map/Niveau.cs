@@ -56,7 +56,6 @@ public class Niveau : MonoBehaviour
                 isDirectionAvailible = CheckDirection(pastRoom);
                 int random = Random.Range(0, isDirectionAvailible.Count);
                 int number = isDirectionAvailible[random];
-
                 switch (number)
                 {
                     case 1:
@@ -110,15 +109,17 @@ public class Niveau : MonoBehaviour
             Vector2Int currentRoomOffset = new Vector2Int(currentRoomPos.x + offsetArray, currentRoomPos.y + offsetArray);
 
             rooms[currentRoomOffset.x, currentRoomOffset.y] = currentRoom;
+
             CheckForRoom(currentRoom.GetComponent<Room>(),currentRoomOffset);
-
-
+            
         }
         foreach (Room room in spawnedRoom)
         {
             Vector2Int currentRoomOffset = new Vector2Int(room.roomPos.x + offsetArray, room.roomPos.y + offsetArray);
             CheckForRoom(room, currentRoomOffset);
+            
         }
+
     }
 
     private void CheckForRoom(Room room,Vector2Int position)
