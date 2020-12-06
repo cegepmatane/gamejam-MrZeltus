@@ -10,7 +10,7 @@ public class EnnemisDistance : Ennemis
     public Transform shootPoint;
     public override void SeDeplacer()
     {
-        shootPoint.LookAt(target.position);
+        shootPoint.transform.LookAt(target.position,-Vector3.forward);
         if (path == null)
         {
             return;

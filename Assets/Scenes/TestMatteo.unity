@@ -1385,5 +1385,9 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7365040901540078034, guid: 3a7200802de9ad842b3331ed2a921bc8, type: 3}
+      propertyPath: m_TagString
+      value: coinmaster
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3a7200802de9ad842b3331ed2a921bc8, type: 3}

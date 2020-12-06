@@ -10,7 +10,9 @@ public class CarteCredit : MonoBehaviour
     public List<Case> TuilePlacable;
     public int coinsNum = 5;
 
-    private void Start()
+
+
+    public void ApparitionCoins()
     {
         PlacementPossible();
         CreateCoins();
