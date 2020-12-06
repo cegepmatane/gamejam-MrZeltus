@@ -6,7 +6,7 @@ using UnityEngine;
 public class Room : MonoBehaviour
 {
     public string roomName;
-    public enum RoomType {EnnemieRoom,BossRoom,ItemRoom,CoinRoom };
+    public enum RoomType {EnnemieRoom,BossRoom,ItemRoom,CoinRoom,StartRoom};
     public RoomType typeRoom;
     public Vector2Int roomPos;
     public bool isClear =false;
