@@ -17,9 +17,9 @@ public class Item : MonoBehaviour
     }
     public virtual void attaquer()
     {
-        
+
     }
-    protected void Tire(int NbBalle, Transform firePoint, float spred, GameObject bulletPrefab, float bulletForce)
+    protected void Tire(int NbBalle, Transform firePoint, float spred, GameObject bulletPrefab, float bulletForce, int dommage)
     {
         GameObject bullet = new GameObject();
         for (int i = 0; i < NbBalle; i++)
@@ -36,10 +36,9 @@ public class Item : MonoBehaviour
             rotationy.y += angley;
             Vector3 rotation = new Vector3(rotationx.x, rotationy.y, 0.0f);
             bullet = Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
+            bullet.GetComponent<Bullet>().dommage = dommage;
             Rigidbody2D rb = bullet.GetComponent<Rigidbody2D>();
             rb.AddForce(rotation * bulletForce, ForceMode2D.Impulse);
         }
-
-
     }
 }

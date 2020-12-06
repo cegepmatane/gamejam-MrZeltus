@@ -10,6 +10,7 @@ public class ItemPistolet : Item
     [SerializeField] private float cadenceDeTir = 0.4f; // cadence de tire, le spred, le monbre de balle, les degas
     [SerializeField] private float spred = 0.5f;
     [SerializeField] private int NbBalle = 4;
+    [SerializeField] public int dommage = 10;
     private float lastShot;
 
     public void Start()
@@ -24,7 +25,7 @@ public class ItemPistolet : Item
             lastShot = time;
             if (Input.GetButton("Fire1"))
             {
-                Tire(NbBalle, firePoint, spred, bulletPrefab, bulletForce);
+                Tire(NbBalle, firePoint, spred, bulletPrefab, bulletForce, dommage);
             }
         }
     }
