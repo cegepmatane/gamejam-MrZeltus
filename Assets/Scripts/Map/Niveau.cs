@@ -6,7 +6,7 @@ public class Niveau : MonoBehaviour
 {
     public static Niveau Instance;
 
-    public List<GameObject> availibleRoom;
+    public List<GameObject> availibleRoom = new List<GameObject>();
     public GameObject tilePortail;
     private List<GameObject> availiblePlayRoom = new List<GameObject>();
     private List<GameObject> availibleBossRoom = new List<GameObject>();
