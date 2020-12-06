@@ -23,11 +23,15 @@ public class Personnage : MonoBehaviour
     {
         movement.x = Input.GetAxisRaw("Horizontal");
         movement.y = Input.GetAxisRaw("Vertical");
-
         mousePos = cam.ScreenToWorldPoint(Input.mousePosition);
-
     }
-
+    void OnCollisionEnter2D(Collision2D  col)
+    {
+        if(col.transform.tag == "Portal")
+        {
+            GameManager.Instance.ChangeRoom(col.transform.gameObject);
+        }
+    }
     private void FixedUpdate()
     {
         body.MovePosition(body.position + movement * runSpeed * Time.fixedDeltaTime);

@@ -8,11 +8,22 @@ public class Room : MonoBehaviour
     public enum RoomType {EnnemieRoom,BossRoom,ItemRoom };
     public RoomType typeRoom;
     public Vector2Int roomPos;
+    public bool isClear =false;
+    public List<Ennemis> ennemis;
+
 
 
     public Room northRoom = null;
     public Room southRoom = null;
     public Room eastRoom = null;
     public Room westRoom = null;
+
+    private void Update()
+    {
+        if(ennemis.Count == 0)
+        {
+            isClear = true;
+        }
+    }
 
 }

@@ -7,6 +7,7 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager Instance;
     Room firstRoom;
+    Room currentRoom;
     Grille grilleActuelle;
     [SerializeField]
     Transform player;
@@ -21,9 +22,21 @@ public class GameManager : MonoBehaviour
     {
        
     }
+    public void ChangeRoom(GameObject portal)
+    {
+        if(portal == currentRoom.northRoom)
+        {
+
+        }
+    }
+
     void GetFirstRoom()
     {
         firstRoom = Niveau.Instance.spawnedRoom[0];
+    }
+    void MoveRoom(Room room)
+    {
+        room.transform.position = new Vector3(0,0,0);
     }
     void SpawnPlayer()
     {
@@ -53,6 +66,8 @@ public class GameManager : MonoBehaviour
         allRooms = spawnedRoom;
         GetFirstRoom();
         DeactivateAllRoom(firstRoom);
+        MoveRoom(firstRoom);
+        currentRoom = firstRoom;
         SpawnPlayer();
     }
 }
