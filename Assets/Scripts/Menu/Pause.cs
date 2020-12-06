@@ -40,6 +40,5 @@ public class Pause : MonoBehaviour
     public void ArreterPause()
     {
         isPause = !isPause;
-        canvas.SetActive(false);
     }
 }
