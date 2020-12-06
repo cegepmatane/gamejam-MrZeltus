@@ -4,7 +4,19 @@ using UnityEngine.SceneManagement;
 public class Pause : MonoBehaviour
 {
     [SerializeField] private GameObject canvas;
-    [SerializeField] private bool isPause;
+    [SerializeField] private GameObject canvasWin;
+    [SerializeField] public bool isPause;
+    [SerializeField] public bool isWin;
+
+    public static Pause Instance;
+
+    private void Awake()
+    {
+        if (Instance != null)
+            Debug.LogError("Une instance a déjà été créée");
+        Instance = this;
+    }
+
     public void Update()
     {
         if (Input.GetKeyDown(KeyCode.Escape))
@@ -12,7 +24,7 @@ public class Pause : MonoBehaviour
             isPause = !isPause;
         }
 
-        if (isPause)
+        if (isPause || isWin)
         {
             PauseActivate();
         }
@@ -20,13 +32,22 @@ public class Pause : MonoBehaviour
         {
             PauseUnActivate();
         }
+
+
     }   
 
     void PauseActivate()
     {
         Time.timeScale = 0;
         AudioListener.pause = true;
-        canvas.SetActive(true);
+        if (isWin == true)
+        {
+            canvasWin.SetActive(true);
+        }
+        else if (isPause == true)
+        {
+            canvas.SetActive(true);
+        }
     }
 
     void PauseUnActivate()
@@ -35,7 +56,6 @@ public class Pause : MonoBehaviour
         AudioListener.pause = false ;
         canvas.SetActive(false);
     }
-
 
     public void ArreterPause()
     {

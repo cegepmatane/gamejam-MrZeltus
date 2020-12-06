@@ -59,6 +59,12 @@ public class Personnage : MonoBehaviour
             VieHUD.instance.ChangeScore(CoinValue);
             Destroy(col.gameObject);
         }
+
+        if (col.transform.tag == "Victoire")
+        {
+            Pause.Instance.isWin = true;
+            Destroy(col.gameObject);
+        }
     }
     private void FixedUpdate()
     {
