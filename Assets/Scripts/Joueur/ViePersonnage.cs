@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class ViePersonnage : MonoBehaviour
 {
@@ -8,7 +9,10 @@ public class ViePersonnage : MonoBehaviour
     private VieHUD m_Vie;
 
     [SerializeField]
-    private int m_Health = 3;
+    private int m_Health = 100;
+
+    public int currentVie;
+    public Slider barreVie;
 
     [SerializeField]
     private float immunity = 2f;
@@ -19,7 +23,8 @@ public class ViePersonnage : MonoBehaviour
 
     private void Start()
     {
-        m_Vie.AfficherVie(m_Health);
+        currentVie = m_Health;
+        m_Vie.SetMaxVie(m_Health);
     }
 
     public void TakeDamage(int a_Damage)
@@ -32,7 +37,7 @@ public class ViePersonnage : MonoBehaviour
 
             m_Health -= a_Damage;
 
-            m_Vie.AfficherVie(m_Health);
+            m_Vie.SetVie(m_Health);
         }
 
 
@@ -40,10 +45,11 @@ public class ViePersonnage : MonoBehaviour
         {
             Die();
         }
+
     }
 
     private void Die()
     {
-        //SceneManager.LoadScene("GameOver");
+        
     }
 }
