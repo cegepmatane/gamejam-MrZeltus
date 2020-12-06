@@ -43,7 +43,6 @@ GameObject:
   - component: {fileID: 742959167}
   - component: {fileID: 742959163}
   - component: {fileID: 5687659708950748427}
-  - component: {fileID: 1425169788}
   - component: {fileID: 278579695}
   - component: {fileID: 2965204176257620557}
   - component: {fileID: 7005560826988139342}
@@ -183,24 +182,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &1425169788
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5590472365322487331}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 908df1f3f8840434a8e413e366bf828d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  firePoint: {fileID: 2068314169258874678}
-  bulletPrefab: {fileID: 6553570913361221323, guid: 29b318f3c535d87478276246df3792c1, type: 3}
-  bulletForce: 20
-  cadenceDeTir: 0.4
-  spred: 0.5
-  NbBalle: 4
 --- !u!114 &278579695
 MonoBehaviour:
   m_ObjectHideFlags: 0
