@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 3757115850511330458}
   m_Layer: 0
   m_Name: VictoireObjet
-  m_TagString: Untagged
+  m_TagString: Victoire
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
