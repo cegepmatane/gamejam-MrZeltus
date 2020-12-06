@@ -11,6 +11,7 @@ public class Personnage : MonoBehaviour
 
     public float runSpeed = 10.0f;
 
+
     void Start()
     {
         body = GetComponent<Rigidbody2D>();
@@ -23,7 +24,7 @@ public class Personnage : MonoBehaviour
         movement.y = Input.GetAxisRaw("Vertical");
         mousePos = cam.ScreenToWorldPoint(Input.mousePosition);
     }
-    void OnCollisionEnter2D(Collision2D  col)
+    public void OnCollisionEnter2D(Collision2D  col)
     {
         if(col.transform.tag == "Portal")
         {
@@ -32,7 +33,7 @@ public class Personnage : MonoBehaviour
 
         if (col.transform.tag == "Ennemi")
         {
-            
+            transform.GetComponent<ViePersonnage>().TakeDamage(10);
         }
     }
     private void FixedUpdate()

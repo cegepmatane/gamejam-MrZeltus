@@ -7,12 +7,10 @@ using UnityEngine.SceneManagement;
 
 public class VieHUD : MonoBehaviour
 {
-    [SerializeField]
-    private Text m_TextVie;
-
     public static VieHUD instance;
     public Text m_TextCollectible;
     public Text m_WinText;
+    public Slider slider;
     int a_Score;
 
     public void Start()
@@ -35,9 +33,15 @@ public class VieHUD : MonoBehaviour
         }
     }
 
-    public void AfficherVie(int a_Value)
+    public void SetVie(int vie)
     {
-        m_TextVie.text = string.Format(": " + a_Value);
+        slider.value = vie;
+    }
+
+    public void SetMaxVie(int vie)
+    {
+        slider.maxValue = vie;
+        slider.value = vie;
     }
 
 }
