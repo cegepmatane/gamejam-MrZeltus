@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-public class ItemPistolet : Item
+public class ItemFusil : Item
 {
     public Transform firePoint;
     public GameObject bulletPrefab;
@@ -8,8 +8,8 @@ public class ItemPistolet : Item
     public float bulletForce = 20f;
 
     [SerializeField] private float cadenceDeTir = 0.4f; // cadence de tire, le spred, le monbre de balle, les degas
-    [SerializeField] private float spred = 0.5f;
-    [SerializeField] private int NbBalle = 4;
+    [SerializeField] private float spred = 0.1f;
+    [SerializeField] private int NbBalle = 1;
     [SerializeField] public int dommage = 10;
     private float lastShot;
 
