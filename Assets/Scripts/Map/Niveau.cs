@@ -33,6 +33,7 @@ public class Niveau : MonoBehaviour
         FindAvailibleRoom();
         GenerateRoom();
         SpawnPortail();
+        GameManager.Instance.SetupGame(spawnedRoom);
         //Map.Instance.LoadMap(availibleRoom);
     }
 
@@ -118,7 +119,6 @@ public class Niveau : MonoBehaviour
             Vector2Int currentRoomOffset = new Vector2Int(room.roomPos.x + offsetArray, room.roomPos.y + offsetArray);
             CheckForRoom(room, currentRoomOffset);
         }
-        GameManager.Instance.SetupGame(spawnedRoom);
     }
 
     private void CheckForRoom(Room room,Vector2Int position)
@@ -216,6 +216,7 @@ public class Niveau : MonoBehaviour
                 grilleActuel.replaceTile(tilePortail, pos, type);
 
             }
+
         }
     }
 }

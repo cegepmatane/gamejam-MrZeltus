@@ -14,6 +14,8 @@ public class Room : MonoBehaviour
     public GameObject computer;
     public List<Case> availlibleSpawnCase;
 
+
+
     public GameObject tileRepresentingIt;
 
     private bool isDone = false;

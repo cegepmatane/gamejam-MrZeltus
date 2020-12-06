@@ -33,10 +33,10 @@ public class Personnage : MonoBehaviour
     }
     private void OnCollisionEnter2D(Collision2D col)
     {
-        if(col.transform.tag == "Portal")
-        {
-            GameManager.Instance.ChangeRoom(col.transform.gameObject);
-        }
+        //if(col.transform.tag == "Portal")
+        //{
+        //    GameManager.Instance.ChangeRoom(col.transform.gameObject);
+        //}
 
         if (col.transform.tag == "Ennemi")
         {

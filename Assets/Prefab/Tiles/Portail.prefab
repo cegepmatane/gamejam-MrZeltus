@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 3894654611524009564}
   - component: {fileID: 1249214918567513677}
   - component: {fileID: 6810654327051476457}
+  - component: {fileID: 4992342783629134598}
   m_Layer: 0
   m_Name: Portail
   m_TagString: Portal
@@ -125,7 +126,21 @@ MonoBehaviour:
   GridPos: {x: 0, y: 0}
   typeCase: 2
   BaseCost: 0
-  isPortalNorth: 0
-  isPortalSouth: 0
-  isPortalEast: 0
-  isPortalWest: 0
+  typePortail: 0
+  size: 1
+--- !u!58 &4992342783629134598
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9031909563584341956}
+  m_Enabled: 0
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 0.51

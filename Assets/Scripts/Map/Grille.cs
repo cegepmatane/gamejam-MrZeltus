@@ -11,6 +11,7 @@ public class Grille : MonoBehaviour
     public bool ShowGrid = true;
     public Case[] TilesList;
     public Case[,] m_TilesList;
+    public List<CasePortail> portails;
     [Space(2)]
     [Header("Grid Editor")]
 #if UNITY_EDITOR
@@ -115,6 +116,7 @@ public class Grille : MonoBehaviour
         t_NewTileGo.transform.localScale = new Vector3(t_Scale, t_Scale, t_Scale);
         t_NewTileGo.GetComponent<Case>().GridPos = position;
         t_NewTileGo.transform.parent = this.transform;
+        portails.Add(t_NewTileGo.GetComponent<CasePortail>());
     }
 
     public Vector3 GridToWorld(Vector2Int a_GridPos)

@@ -70,6 +70,8 @@ public class GameManager : MonoBehaviour
         currentRoom = newCurrentRoom;
         MovePlayer();
         fade.fadeOut(1);
+        ActivatePortal();
+
     }
     private void MovePlayer()
     {
@@ -141,5 +143,16 @@ public class GameManager : MonoBehaviour
         MoveRoom(firstRoom);
         currentRoom = firstRoom;
         SpawnPlayer();
+        ActivatePortal();
+
+    }
+
+    private void ActivatePortal()
+    {
+        Grille laGrille = currentRoom.transform.GetComponent<Grille>();
+        foreach (CasePortail portail in laGrille.portails)
+        {
+            portail.LoadCollider();
+        }
     }
 }

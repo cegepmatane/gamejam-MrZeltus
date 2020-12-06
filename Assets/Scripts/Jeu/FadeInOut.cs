@@ -6,14 +6,12 @@ using UnityEngine.UI;
 public class FadeInOut : MonoBehaviour
 {
     public Image blackFade;
-
+    public bool asFade;
     public void Start()
     {
         blackFade.canvasRenderer.SetAlpha(1.0f);
         fadeOut(2);
-
     }
-
     public void fadeIn(int time)
     {
         blackFade.CrossFadeAlpha(1, time, false);
