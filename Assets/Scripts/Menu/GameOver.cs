@@ -8,6 +8,13 @@ public class GameOver : MonoBehaviour
 
     public static GameOver Instance;
 
+    private void Awake()
+    {
+        if(Instance != null)
+            Debug.LogError("Une instance a déjà été créée");
+        Instance = this;
+    }
+
     public void Update()
     {
         if (isDead == true)
