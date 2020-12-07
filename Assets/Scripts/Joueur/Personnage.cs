@@ -1,5 +1,6 @@
 ﻿using System;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 [RequireComponent(typeof(Rigidbody))]
 public class Personnage : MonoBehaviour
@@ -104,6 +105,10 @@ public class Personnage : MonoBehaviour
         {
             Pause.Instance.isWin = true;
             Destroy(col.gameObject);
+        }
+        if (col.transform.tag == "ChangerNiveau")
+        {
+            SceneManager.LoadScene("Niveau2");
         }
     }
     private void FixedUpdate()

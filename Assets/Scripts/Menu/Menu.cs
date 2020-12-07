@@ -7,7 +7,7 @@ public class Menu : MonoBehaviour
     public void Jouer()
     {
         Debug.Log("Jouer");
-        throw new NotImplementedException("SceneManager.LoadScene(ScenePrincipal1);");
+        SceneManager.LoadScene("Niveau1");
     }
 
     public void Quitter()
