@@ -1132,6 +1132,10 @@ PrefabInstance:
       propertyPath: scoreText
       value: 
       objectReference: {fileID: 1572198336}
+    - target: {fileID: 4676549405034046723, guid: e68164ed6ef4c804f8a457f6d75f9767, type: 3}
+      propertyPath: m_fontColor32.rgba
+      value: 4278776831
+      objectReference: {fileID: 0}
     - target: {fileID: 4686198895176125250, guid: e68164ed6ef4c804f8a457f6d75f9767, type: 3}
       propertyPath: m_IsActive
       value: 0
@@ -1202,36 +1206,30 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e68164ed6ef4c804f8a457f6d75f9767, type: 3}
---- !u!114 &1395731043 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 4676549405034046723, guid: e68164ed6ef4c804f8a457f6d75f9767, type: 3}
-  m_PrefabInstance: {fileID: 1395731042}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!1 &1395731044 stripped
+--- !u!1 &1464613729 stripped
 GameObject:
-  m_CorrespondingSourceObject: {fileID: 8132929570042099921, guid: e68164ed6ef4c804f8a457f6d75f9767, type: 3}
+  m_CorrespondingSourceObject: {fileID: 7506256627344352440, guid: e68164ed6ef4c804f8a457f6d75f9767, type: 3}
   m_PrefabInstance: {fileID: 1395731042}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1395731045
-MonoBehaviour:
+--- !u!95 &1464613732
+Animator:
+  serializedVersion: 3
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1395731044}
+  m_GameObject: {fileID: 1464613729}
   m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c82cecb18cc92554f81db3640f43bb89, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  scoreText: {fileID: 1395731043}
-  scoreValue: 0
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: b0ff6dda3e9c2c546a026b8640cd2450, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &1472111707
 GameObject:
   m_ObjectHideFlags: 0
