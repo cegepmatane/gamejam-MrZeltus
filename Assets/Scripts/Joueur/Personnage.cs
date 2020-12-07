@@ -104,6 +104,7 @@ public class Personnage : MonoBehaviour
         if (col.transform.tag == "Victoire")
         {
             Pause.Instance.isWin = true;
+            Victoire.Instance.AfficherScore();
             Destroy(col.gameObject);
         }
         if (col.transform.tag == "ChangerNiveau")
