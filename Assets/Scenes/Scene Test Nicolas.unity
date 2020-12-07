@@ -607,7 +607,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8642724294386920285, guid: 6e3adb2ddb8bb3741b2c334971a054c1, type: 3}
       propertyPath: m_Name
-      value: Room5(CoinMaster&Ennemie)
+      value: Room5(Arme&Ennemie)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6e3adb2ddb8bb3741b2c334971a054c1, type: 3}
@@ -1120,7 +1120,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2612885532416759717, guid: c2a2717db4a08434b8c506cad38a4fcd, type: 3}
       propertyPath: m_Name
-      value: Room2 (Coin)
+      value: Room2 (Item)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c2a2717db4a08434b8c506cad38a4fcd, type: 3}
@@ -1747,7 +1747,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 3544569520883088111, guid: de91bfecd0153d2498c5b57174b647c7, type: 3}
       propertyPath: m_Name
-      value: Room6(Coin&Ennemie)
+      value: Room6(Arme&Ennemie)
       objectReference: {fileID: 0}
     - target: {fileID: 3544569520883088113, guid: de91bfecd0153d2498c5b57174b647c7, type: 3}
       propertyPath: m_RootOrder
