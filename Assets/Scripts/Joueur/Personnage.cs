@@ -34,6 +34,7 @@ public class Personnage : MonoBehaviour
         isSpeed = true;
         currentTime = speedTime;
     }
+
     public Camera cam;
 
     Vector2 movement;
