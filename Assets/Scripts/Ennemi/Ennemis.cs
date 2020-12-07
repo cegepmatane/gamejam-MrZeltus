@@ -42,6 +42,9 @@ public class Ennemis : MonoBehaviour
 
     private void Update()
     {
+        Vector2 lookDir = target.position - transform.position;
+        float angle = Mathf.Atan2(lookDir.y, lookDir.x) * Mathf.Rad2Deg + 90f;
+        rb.rotation = angle;
         SeDeplacer();
     }
 

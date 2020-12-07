@@ -8,7 +8,7 @@ public class Projectile : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if(collision.transform.tag == "Player" || collision.transform.tag == "Obstacle")
+        if(collision.transform.tag == "Player" || collision.transform.gameObject.layer == 8)
         {
             if(collision.transform.tag == "Player")
             {
