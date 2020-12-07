@@ -13,8 +13,8 @@ GameObject:
   - component: {fileID: 4170479930026117064}
   - component: {fileID: 8163510710030148961}
   - component: {fileID: 5841435195117560168}
-  - component: {fileID: 4170479930026117105}
   - component: {fileID: 4170479930026117070}
+  - component: {fileID: 7682556455003400250}
   m_Layer: 0
   m_Name: EnnemiDistance2
   m_TagString: Ennemi
@@ -156,32 +156,6 @@ MonoBehaviour:
   - {fileID: 3059716421308801280, guid: 24562fa0ea262a94e82633dfc3952023, type: 3}
   - {fileID: 7000995100450292790, guid: 4591a882db0e7014f9acb2e49a0cd8f6, type: 3}
   EnnemieHealth: 100
---- !u!61 &4170479930026117105
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4170479930026117071}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: -0.00043435395, y: 0.044793837}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 4.15, y: 4.11}
-    newSize: {x: 0.16, y: 0.16}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 0.35002163, y: 0.32093656}
-  m_EdgeRadius: 0
 --- !u!114 &4170479930026117070
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -207,6 +181,22 @@ MonoBehaviour:
   projectileForce: 20
   shootPoint: {fileID: 8163510711664519495}
   cadenceDeTir: 0.2
+--- !u!70 &7682556455003400250
+CapsuleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4170479930026117071}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.0010472644, y: 0.08920142}
+  m_Size: {x: 0.22055426, y: 0.16538447}
+  m_Direction: 1
 --- !u!1 &8163510711664519492
 GameObject:
   m_ObjectHideFlags: 0

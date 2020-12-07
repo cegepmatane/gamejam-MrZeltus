@@ -43,8 +43,8 @@ GameObject:
   - component: {fileID: 6736868991221636479}
   - component: {fileID: 1572937678343110614}
   - component: {fileID: 3859124860994468831}
-  - component: {fileID: 6736868991221636422}
   - component: {fileID: 6736868991221636473}
+  - component: {fileID: 809639361036835279}
   m_Layer: 0
   m_Name: Boss2
   m_TagString: Ennemi
@@ -186,32 +186,6 @@ MonoBehaviour:
   - {fileID: 3059716421308801280, guid: 24562fa0ea262a94e82633dfc3952023, type: 3}
   - {fileID: 7000995100450292790, guid: 4591a882db0e7014f9acb2e49a0cd8f6, type: 3}
   EnnemieHealth: 500
---- !u!61 &6736868991221636422
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6736868991221636472}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: -0.010729551, y: 0.014338352}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 4.15, y: 4.11}
-    newSize: {x: 0.16, y: 0.16}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 0.2371118, y: 0.2791018}
-  m_EdgeRadius: 0
 --- !u!114 &6736868991221636473
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -237,3 +211,19 @@ MonoBehaviour:
   projectileForce: 30
   shootPoint: {fileID: 1572937680111170544}
   cadenceDeTir: 0.2
+--- !u!70 &809639361036835279
+CapsuleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6736868991221636472}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.01865929, y: 0.054856848}
+  m_Size: {x: 0.22271106, y: 0.17256194}
+  m_Direction: 1

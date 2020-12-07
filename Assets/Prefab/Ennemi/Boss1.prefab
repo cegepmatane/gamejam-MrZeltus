@@ -43,9 +43,9 @@ GameObject:
   - component: {fileID: 8460480057839943296}
   - component: {fileID: 4450595548171901993}
   - component: {fileID: 2132981035401173024}
-  - component: {fileID: 8460480057839943353}
   - component: {fileID: 8460480057839943300}
   - component: {fileID: 8460480057839943301}
+  - component: {fileID: 5205292967493780301}
   m_Layer: 0
   m_Name: Boss1
   m_TagString: Ennemi
@@ -187,32 +187,6 @@ MonoBehaviour:
   - {fileID: 3059716421308801280, guid: 24562fa0ea262a94e82633dfc3952023, type: 3}
   - {fileID: 7000995100450292790, guid: 4591a882db0e7014f9acb2e49a0cd8f6, type: 3}
   EnnemieHealth: 1000
---- !u!61 &8460480057839943353
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8460480057839943303}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0.00097480416, y: 0.02436101}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.48, y: 0.48}
-    newSize: {x: 0.16, y: 0.16}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 0.42047977, y: 0.29134417}
-  m_EdgeRadius: 0
 --- !u!114 &8460480057839943300
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -252,3 +226,19 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!70 &5205292967493780301
+CapsuleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8460480057839943303}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.002872442, y: 0.04786764}
+  m_Size: {x: 0.378523, y: 0.23109254}
+  m_Direction: 1

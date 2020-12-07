@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &2306530486656217315
+--- !u!1 &4145675156671265894
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,42 +8,42 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 2306530486656217318}
-  - component: {fileID: 2306530486656217319}
-  - component: {fileID: 2306530486656217316}
-  - component: {fileID: 7541393689192125005}
-  - component: {fileID: 5256270844533446212}
-  - component: {fileID: 2306530486656217309}
-  - component: {fileID: 2306530486656217314}
+  - component: {fileID: 4145675156671265891}
+  - component: {fileID: 4145675156671265890}
+  - component: {fileID: 4145675156671265889}
+  - component: {fileID: 8152216042893385416}
+  - component: {fileID: 5870462649470638785}
+  - component: {fileID: 4145675156671265893}
+  - component: {fileID: 7273428104045053356}
   m_Layer: 0
-  m_Name: EnnemiDistance3
+  m_Name: MonstreC1
   m_TagString: Ennemi
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &2306530486656217318
+--- !u!4 &4145675156671265891
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2306530486656217315}
+  m_GameObject: {fileID: 4145675156671265894}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 3.45, y: 2.41, z: 0}
-  m_LocalScale: {x: 0.76445997, y: 0.76445997, z: 0.76445997}
+  m_LocalPosition: {x: -3.51, y: 2.06, z: 0}
+  m_LocalScale: {x: 1.4120964, y: 1.4120964, z: 1.4120964}
   m_Children:
-  - {fileID: 7541393689869213291}
+  - {fileID: 8152216041255801582}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!212 &2306530486656217319
+--- !u!212 &4145675156671265890
 SpriteRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2306530486656217315}
+  m_GameObject: {fileID: 4145675156671265894}
   m_Enabled: 1
   m_CastShadows: 0
   m_ReceiveShadows: 0
@@ -77,10 +77,10 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 1
-  m_Sprite: {fileID: 21300000, guid: 45054d9d585c1654492092fecf655ace, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 9641a5436b5412a4eb3687210b49f6df, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
-  m_FlipY: 0
+  m_FlipY: 1
   m_DrawMode: 0
   m_Size: {x: 0.16, y: 0.16}
   m_AdaptiveModeThreshold: 0.5
@@ -88,13 +88,13 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &2306530486656217316
+--- !u!114 &4145675156671265889
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2306530486656217315}
+  m_GameObject: {fileID: 4145675156671265894}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 373b52eb9bf8c40f785bb6947a1aee66, type: 3}
@@ -116,14 +116,14 @@ MonoBehaviour:
   tagPenalties: 0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
   graphMask:
     value: -1
---- !u!50 &7541393689192125005
+--- !u!50 &8152216042893385416
 Rigidbody2D:
   serializedVersion: 4
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2306530486656217315}
+  m_GameObject: {fileID: 4145675156671265894}
   m_BodyType: 0
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
@@ -137,77 +137,62 @@ Rigidbody2D:
   m_SleepingMode: 2
   m_CollisionDetection: 0
   m_Constraints: 4
---- !u!114 &5256270844533446212
+--- !u!114 &5870462649470638785
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2306530486656217315}
+  m_GameObject: {fileID: 4145675156671265894}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 63725d8acddc92c40ae43652561d3fe5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ennemis: {fileID: 2306530486656217314}
+  ennemis: {fileID: 0}
   ListeObjet:
   - {fileID: 1812452527824222052, guid: a320acab1d0671044a3866d62d304eb9, type: 3}
   - {fileID: 4895124056303468088, guid: 9eb1c3edcc636b34ea350778052eb7c8, type: 3}
   - {fileID: 3059716421308801280, guid: 24562fa0ea262a94e82633dfc3952023, type: 3}
   - {fileID: 7000995100450292790, guid: 4591a882db0e7014f9acb2e49a0cd8f6, type: 3}
-  EnnemieHealth: 100
---- !u!61 &2306530486656217309
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2306530486656217315}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: -0.0016797781, y: 0.09032577}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 4, y: 4}
-    newSize: {x: 0.16, y: 0.16}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 0.9328742, y: 1.0056037}
-  m_EdgeRadius: 0
---- !u!114 &2306530486656217314
+  EnnemieHealth: 50
+--- !u!114 &4145675156671265893
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2306530486656217315}
+  m_GameObject: {fileID: 4145675156671265894}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2c570238c52ac3d4698264641f52ccc4, type: 3}
+  m_Script: {fileID: 11500000, guid: 660ef80996194a5418e5cf45fc183df0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 0}
-  speed: 200
+  speed: 2000
   nextWaypointDistance: 3
   currentWaypoint: 0
   reachedEndOfPath: 0
   dammage: 10
   seeker: {fileID: 0}
   rb: {fileID: 0}
-  distanceToShoot: 5
-  ennemieProjectile: {fileID: 3438568590249940200, guid: 39bab85d3703996438eb172839f5f5cd, type: 3}
-  projectileForce: 10
-  shootPoint: {fileID: 7541393689869213291}
-  cadenceDeTir: 1
---- !u!1 &7541393689869213288
+--- !u!70 &7273428104045053356
+CapsuleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4145675156671265894}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.017745798, y: 0.0037405298}
+  m_Size: {x: 0.47807774, y: 0.34079537}
+  m_Direction: 1
+--- !u!1 &8152216041255801581
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -215,7 +200,7 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 7541393689869213291}
+  - component: {fileID: 8152216041255801582}
   m_Layer: 0
   m_Name: ShootPoint
   m_TagString: Untagged
@@ -223,17 +208,17 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &7541393689869213291
+--- !u!4 &8152216041255801582
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7541393689869213288}
+  m_GameObject: {fileID: 8152216041255801581}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.0053, y: -0.0381, z: 0}
+  m_LocalPosition: {x: -0.035, y: -0.132, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 2306530486656217318}
+  m_Father: {fileID: 4145675156671265891}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
