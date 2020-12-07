@@ -7,10 +7,10 @@ public class ItemShotGun : Item
 
     public float bulletForce = 20f;
 
-    [SerializeField] private float cadenceDeTir = 0.4f; // cadence de tire, le spred, le monbre de balle, les degas
-    [SerializeField] private float spred = 0.1f;
-    [SerializeField] private int NbBalle = 1;
-    [SerializeField] public int dommage = 10;
+    [SerializeField] private float cadenceDeTir = 1f; // cadence de tire, le spred, le monbre de balle, les degas
+    [SerializeField] private float spred = 0.6f;
+    [SerializeField] private int NbBalle = 7;
+    [SerializeField] public int dommage = 4;
     private float lastShot;
 
     public void Start()

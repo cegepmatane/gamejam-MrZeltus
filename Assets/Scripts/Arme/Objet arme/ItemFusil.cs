@@ -5,12 +5,12 @@ public class ItemFusil : Item
     public Transform firePoint;
     public GameObject bulletPrefab;
 
-    public float bulletForce = 20f;
+    public float bulletForce = 40f;
 
-    [SerializeField] private float cadenceDeTir = 0.4f; // cadence de tire, le spred, le monbre de balle, les degas
-    [SerializeField] private float spred = 0.1f;
+    [SerializeField] private float cadenceDeTir = 1.3f; // cadence de tire, le spred, le monbre de balle, les degas
+    [SerializeField] private float spred = 0.01f;
     [SerializeField] private int NbBalle = 1;
-    [SerializeField] public int dommage = 10;
+    [SerializeField] public int dommage = 50;
     private float lastShot;
 
     public void Start()
