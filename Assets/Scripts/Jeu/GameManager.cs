@@ -23,6 +23,10 @@ public class GameManager : MonoBehaviour
     public FadeInOut fade;
     public AstarPath pathfinder;
     public GameObject computer;
+
+    public GameObject bossRoom1;
+    public GameObject bossRoom2;
+
     public void Awake()
     {
         Instance = this;

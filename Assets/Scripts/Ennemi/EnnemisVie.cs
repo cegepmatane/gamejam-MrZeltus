@@ -24,9 +24,9 @@ public class EnnemisVie : MonoBehaviour
     }
     public void EnnemieMort()
     {
-        GameManager.Instance.currentRoom.currentRoomEnnemie.Remove(transform.GetComponent<Ennemis>());
         if(EnnemieHealth <= 0)
         {
+            GameManager.Instance.currentRoom.currentRoomEnnemie.Remove(transform.GetComponent<Ennemis>());
             DropObjet();
             Destroy(ennemis.gameObject);
         }

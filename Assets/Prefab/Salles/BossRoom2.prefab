@@ -306,12 +306,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0406b09dc3318ee4182b8f14c9531496, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  roomName: BaseRoom
+  roomName: BoseRoom2
   typeRoom: 1
   roomPos: {x: 0, y: 0}
   isClear: 0
   currentRoomEnnemie: []
-  victoire: {fileID: 0}
+  victoire: {fileID: 3757115850511330469, guid: 6662bae7585b3884d89de1a04fef5564, type: 3}
+  computer: {fileID: 0}
   availlibleSpawnCase: []
   tileRepresentingIt: {fileID: 0}
   northRoom: {fileID: 0}
