@@ -80,7 +80,7 @@ public class Personnage : MonoBehaviour
 
         if (col.transform.tag == "Ennemi")
         {
-            transform.GetComponent<ViePersonnage>().TakeDamage(col.transform.GetComponent<Ennemis>().dammage);
+            transform.GetComponent<ViePersonnage>().TakeDamage(col.transform.GetComponent<Ennemis>().dammage, col.transform.GetComponent<Ennemis>());
         }
     }
 

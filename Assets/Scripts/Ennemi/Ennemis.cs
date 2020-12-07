@@ -1,4 +1,5 @@
 ﻿using Pathfinding;
+using System.Collections;
 using UnityEngine;
 
 public class Ennemis : MonoBehaviour
@@ -16,9 +17,11 @@ public class Ennemis : MonoBehaviour
 
     public Seeker seeker;
     public Rigidbody2D rb;
+    private Animator anim;
     private void Start()
     {
         seeker = GetComponent<Seeker>();
+        anim = GetComponent<Animator>();
         rb = GetComponent<Rigidbody2D>();
         target = Personnage.Instance.transform;
         InvokeRepeating("UpdatePath", 0f, 0.05f);
@@ -71,5 +74,12 @@ public class Ennemis : MonoBehaviour
         {
             currentWaypoint++;
         }
+    }
+    IEnumerator Attaque()
+    {
+        anim.SetTrigger("Attaque");
+        //anim.SetBool("attaque",true);
+        yield return new WaitForSeconds(0.5f);
+        //anim.SetBool("attaque", false);
     }
 }

@@ -45,6 +45,7 @@ public class ViePersonnage : MonoBehaviour
 
         if (time - lastDamage >= immunity)
         {
+
             if(Personnage.Instance.isShield == false)
             {
                 lastDamage = time;
@@ -65,7 +66,33 @@ public class ViePersonnage : MonoBehaviour
         }
        
     }
+    public void TakeDamage(int a_Damage,Ennemis ennemie)
+    {
+        float time = Time.time;
 
+        if (time - lastDamage >= immunity)
+        {
+            ennemie.StartCoroutine("Attaque");
+            if (Personnage.Instance.isShield == false)
+            {
+                lastDamage = time;
+                m_Health -= a_Damage;
+                m_Vie.SetVie(m_Health);
+            }
+            else
+            {
+                Personnage.Instance.isShield = false;
+            }
+
+        }
+        if (m_Health <= 0)
+        {
+            if (isDone == false)
+                StartCoroutine("Die");
+            isDone = true;
+        }
+
+    }
     IEnumerator Die()
     {
         isDead = true;
