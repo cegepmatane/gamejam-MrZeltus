@@ -13,6 +13,7 @@ public class Room : MonoBehaviour
     GameObject[] ennemies;
     public List<Ennemis> currentRoomEnnemie = new List<Ennemis>();
     public GameObject victoire;
+    public GameObject computer;
     public List<Case> availlibleSpawnCase;
 
 
@@ -60,6 +61,7 @@ public class Room : MonoBehaviour
 
     private void Update()
     {
+        Debug.Log(currentRoomEnnemie.Count);
         if (currentRoomEnnemie.Count == 0)
         {
             isClear = true;
@@ -68,7 +70,7 @@ public class Room : MonoBehaviour
         {
             if(typeRoom == RoomType.BossRoom)
             {
-                if(isDone == false)
+                if(isDone == false && roomName == "BoseRoom2")
                 {
                     int random = UnityEngine.Random.Range(0, availlibleSpawnCase.Count);
                     Vector3 position = transform.GetComponent<Grille>().GridToWorld(availlibleSpawnCase[random].GridPos);
@@ -77,8 +79,16 @@ public class Room : MonoBehaviour
                     levelEnd.transform.parent = this.transform;
                     isDone = true;
                 }
-               
-                
+                if (isDone == false && roomName == "BoseRoom")
+                {
+                    int random = UnityEngine.Random.Range(0, availlibleSpawnCase.Count);
+                    Vector3 position = transform.GetComponent<Grille>().GridToWorld(availlibleSpawnCase[random].GridPos);
+                    position.z = -0.5f;
+                    GameObject levelEnd = Instantiate(computer, position, Quaternion.identity);
+                    levelEnd.transform.parent = this.transform;
+                    isDone = true;
+                }
+
             }
         }
     }
