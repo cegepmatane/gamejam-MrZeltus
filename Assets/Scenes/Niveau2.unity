@@ -1124,6 +1124,30 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1923902607}
     m_Modifications:
+    - target: {fileID: 1048256180295256666, guid: e68164ed6ef4c804f8a457f6d75f9767, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -154
+      objectReference: {fileID: 0}
+    - target: {fileID: 2813719858109596929, guid: e68164ed6ef4c804f8a457f6d75f9767, type: 3}
+      propertyPath: scoreText
+      value: 
+      objectReference: {fileID: 1572198336}
+    - target: {fileID: 4686198895176125250, guid: e68164ed6ef4c804f8a457f6d75f9767, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5687621341400033232, guid: e68164ed6ef4c804f8a457f6d75f9767, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 799.43256
+      objectReference: {fileID: 0}
+    - target: {fileID: 5687621341400033232, guid: e68164ed6ef4c804f8a457f6d75f9767, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 7844512192900209045, guid: e68164ed6ef4c804f8a457f6d75f9767, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8132929571108040126, guid: e68164ed6ef4c804f8a457f6d75f9767, type: 3}
       propertyPath: m_Name
       value: Menu
@@ -1172,8 +1196,42 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 9175088472381891719, guid: e68164ed6ef4c804f8a457f6d75f9767, type: 3}
+      propertyPath: m_HorizontalAlignment
+      value: 2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e68164ed6ef4c804f8a457f6d75f9767, type: 3}
+--- !u!114 &1395731043 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4676549405034046723, guid: e68164ed6ef4c804f8a457f6d75f9767, type: 3}
+  m_PrefabInstance: {fileID: 1395731042}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!1 &1395731044 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8132929570042099921, guid: e68164ed6ef4c804f8a457f6d75f9767, type: 3}
+  m_PrefabInstance: {fileID: 1395731042}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1395731045
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1395731044}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c82cecb18cc92554f81db3640f43bb89, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  scoreText: {fileID: 1395731043}
+  scoreValue: 0
 --- !u!1 &1472111707
 GameObject:
   m_ObjectHideFlags: 0
@@ -1426,6 +1484,17 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 3378607563215646673, guid: 8edcd7a8ee31e69488db674b1e81d3f9, type: 3}
   m_PrefabInstance: {fileID: 1544386522}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1572198336 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 9175088472381891719, guid: e68164ed6ef4c804f8a457f6d75f9767, type: 3}
+  m_PrefabInstance: {fileID: 1395731042}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1607798675 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2655608944292249446, guid: f60686792868f6b40903c2e9cf851f4f, type: 3}
@@ -1645,7 +1714,7 @@ PrefabInstance:
       objectReference: {fileID: 844898319}
     - target: {fileID: 2655608945106297468, guid: f60686792868f6b40903c2e9cf851f4f, type: 3}
       propertyPath: levelSize
-      value: 20
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 2655608945106297468, guid: f60686792868f6b40903c2e9cf851f4f, type: 3}
       propertyPath: availibleStartRoom
