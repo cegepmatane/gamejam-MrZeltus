@@ -10,7 +10,7 @@ public class Niveau : MonoBehaviour
     public GameObject tilePortail;
     private List<GameObject> availiblePlayRoom = new List<GameObject>();
     private List<GameObject> availibleBossRoom = new List<GameObject>();
-    private GameObject availibleStartRoom;
+    public GameObject availibleStartRoom;
 
     private List<int> isDirectionAvailible;
 

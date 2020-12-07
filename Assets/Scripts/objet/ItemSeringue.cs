@@ -2,9 +2,10 @@
 
 public class ItemSeringue : Item
 {
+    public int healAmmount = 10;
     public override void utiliser()
     {
         base.utiliser();
-        Debug.Log("utilisation seringe");
+        Personnage.Instance.Heal(healAmmount);
     }
 }

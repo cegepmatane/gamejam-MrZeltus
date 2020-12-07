@@ -6,10 +6,11 @@ using UnityEngine.UI;
 public class ViePersonnage : MonoBehaviour
 {
     [SerializeField]
-    private VieHUD m_Vie;
+    public VieHUD m_Vie;
 
     [SerializeField]
-    private int m_Health = 100;
+    public int m_Health = 100;
+    public int max_Health = 100;
 
     public int currentVie;
     public Slider barreVie;
@@ -19,7 +20,7 @@ public class ViePersonnage : MonoBehaviour
 
     private float lastDamage;
 
-    public int Health { get => m_Health; }
+    public int Health { get => m_Health; set { Health = value; } }
 
     private void Start()
     {
@@ -33,9 +34,17 @@ public class ViePersonnage : MonoBehaviour
 
         if (time - lastDamage >= immunity)
         {
-            lastDamage = time;
-            m_Health -= a_Damage;
-            m_Vie.SetVie(m_Health);
+            if(Personnage.Instance.isShield == false)
+            {
+                lastDamage = time;
+                m_Health -= a_Damage;
+                m_Vie.SetVie(m_Health);
+            }
+            else
+            {
+                Personnage.Instance.isShield = false;
+            }
+            
         }
 
 
