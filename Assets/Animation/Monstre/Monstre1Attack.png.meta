@@ -1,7 +1,31 @@
 fileFormatVersion: 2
 guid: deb7bd9c2b49136439808b2ef57509d8
 TextureImporter:
-  internalIDToNameTable: []
+  internalIDToNameTable:
+  - first:
+      213: 3830844304509886095
+    second: Monstre1Attack_0
+  - first:
+      213: -4825539968298401359
+    second: Monstre1Attack_1
+  - first:
+      213: -4346809799810031087
+    second: Monstre1Attack_2
+  - first:
+      213: -5790295388274845334
+    second: Monstre1Attack_3
+  - first:
+      213: -7337979044253776787
+    second: Monstre1Attack_4
+  - first:
+      213: -5829189824175943988
+    second: Monstre1Attack_5
+  - first:
+      213: 4570867063850471710
+    second: Monstre1Attack_6
+  - first:
+      213: 868429733786875023
+    second: Monstre1Attack_8
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -41,7 +65,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -87,7 +111,154 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: Monstre1Attack_0
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 60
+        width: 44
+        height: 50
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f8ed3282994e92530800000000000000
+      internalID: 3830844304509886095
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Monstre1Attack_1
+      rect:
+        serializedVersion: 2
+        x: 50
+        y: 60
+        width: 44
+        height: 50
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1b1cf1437fc380db0800000000000000
+      internalID: -4825539968298401359
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Monstre1Attack_2
+      rect:
+        serializedVersion: 2
+        x: 100
+        y: 37
+        width: 44
+        height: 73
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 112e22874870da3c0800000000000000
+      internalID: -4346809799810031087
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Monstre1Attack_3
+      rect:
+        serializedVersion: 2
+        x: 150
+        y: 60
+        width: 44
+        height: 50
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a699b4dc50db4afa0800000000000000
+      internalID: -5790295388274845334
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Monstre1Attack_4
+      rect:
+        serializedVersion: 2
+        x: 196
+        y: 60
+        width: 44
+        height: 50
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d644ef100f24a2a90800000000000000
+      internalID: -7337979044253776787
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Monstre1Attack_5
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 10
+        width: 44
+        height: 50
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ccecba14dbe8a1fa0800000000000000
+      internalID: -5829189824175943988
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Monstre1Attack_6
+      rect:
+        serializedVersion: 2
+        x: 50
+        y: 10
+        width: 44
+        height: 50
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e111758806bfe6f30800000000000000
+      internalID: 4570867063850471710
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
