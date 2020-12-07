@@ -8,6 +8,11 @@ public class EnnemisVie : MonoBehaviour
 
     [SerializeField] int EnnemieHealth = 100;
 
+
+    public void Awake()
+    {
+        ennemis = transform.GetComponent<Ennemis>();
+    }
     private void OnTriggerEnter2D(Collider2D col)
     {
       if (col.transform.tag == "Bullet")
@@ -19,6 +24,7 @@ public class EnnemisVie : MonoBehaviour
     }
     public void EnnemieMort()
     {
+        GameManager.Instance.currentRoom.currentRoomEnnemie.Remove(transform.GetComponent<Ennemis>());
         if(EnnemieHealth <= 0)
         {
             DropObjet();

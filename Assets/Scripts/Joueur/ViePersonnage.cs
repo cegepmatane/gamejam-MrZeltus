@@ -72,7 +72,10 @@ public class ViePersonnage : MonoBehaviour
 
         if (time - lastDamage >= immunity)
         {
-            ennemie.StartCoroutine("Attaque");
+            if(ennemie.anim != null)
+            {
+                ennemie.StartCoroutine("Attaque");
+            }
             if (Personnage.Instance.isShield == false)
             {
                 lastDamage = time;

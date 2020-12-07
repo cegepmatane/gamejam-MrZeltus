@@ -10,7 +10,8 @@ public class Room : MonoBehaviour
     public RoomType typeRoom;
     public Vector2Int roomPos;
     public bool isClear =false;
-    public List<Ennemis> ennemis;
+    GameObject[] ennemies;
+    public List<Ennemis> currentRoomEnnemie = new List<Ennemis>();
     public GameObject victoire;
     public List<Case> availlibleSpawnCase;
 
@@ -27,7 +28,22 @@ public class Room : MonoBehaviour
 
     public void Start()
     {
+        SearchForEnnemie();
         findAvaillibleSpawn();
+
+    }
+
+    private void SearchForEnnemie()
+    {
+        ennemies = GameObject.FindGameObjectsWithTag("Ennemi");
+        foreach (GameObject ennemie in ennemies)
+        {
+            if (ennemie.transform.parent.name == this.gameObject.name)
+            {
+                currentRoomEnnemie.Add(ennemie.transform.GetComponent<Ennemis>());
+
+            }
+        }
     }
 
     private void findAvaillibleSpawn()
@@ -44,7 +60,7 @@ public class Room : MonoBehaviour
 
     private void Update()
     {
-        if(ennemis.Count == 0)
+        if (currentRoomEnnemie.Count == 0)
         {
             isClear = true;
         }

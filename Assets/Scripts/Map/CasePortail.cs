@@ -9,16 +9,23 @@ public class CasePortail : Case
     public TypePortail typePortail;
     public int size =1;
     CircleCollider2D collider;
+    public bool isOpen = false;
     bool asDone;
 
-    public void LoadCollider()
+    public void Awake()
     {
         collider = transform.GetComponent<CircleCollider2D>();
-        collider.enabled= true;
+    }
+    public void LoadCollider()
+    {
         if(!asDone)
             ChangeRotation();
     }
 
+    public void Update()
+    {
+        collider.enabled = isOpen;
+    }
     private void ChangeRotation()
     {
         if (typePortail == TypePortail.East)
@@ -38,7 +45,6 @@ public class CasePortail : Case
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        collider.enabled = false;
         if (collision.transform.tag == "Player")
         {
             GameManager.Instance.ChangeRoom(transform.gameObject);

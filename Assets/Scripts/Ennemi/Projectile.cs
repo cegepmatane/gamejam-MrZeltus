@@ -10,7 +10,6 @@ public class Projectile : MonoBehaviour
     {
         if(collision.transform.tag == "Player" || collision.transform.gameObject.layer == 8)
         {
-            Debug.Log("test");
             if(collision.transform.tag == "Player")
             {
                 collision.GetComponent<ViePersonnage>().TakeDamage(5);

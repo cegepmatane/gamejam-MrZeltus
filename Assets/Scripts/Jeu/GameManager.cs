@@ -6,11 +6,12 @@ using Pathfinding;
 
 public class GameManager : MonoBehaviour
 {
+    private bool doOnce = false;
     public static GameManager Instance;
     Vector2Int start = new Vector2Int(0, 0);
     CasePortail.TypePortail typePortail;
     Room firstRoom;
-    Room currentRoom;
+    public Room currentRoom;
     Room newCurrentRoom;
     Grille grilleActuelle;
     [SerializeField]
@@ -34,6 +35,7 @@ public class GameManager : MonoBehaviour
     // Start is called before the first frame update
     public void ChangeRoom(GameObject portal)
     {
+        
         CasePortail tuile = portal.GetComponent<CasePortail>();
         typePortail = tuile.typePortail;
         if (tuile.typePortail.ToString() == "North")
@@ -78,6 +80,7 @@ public class GameManager : MonoBehaviour
         currentRoom = newCurrentRoom;
         MovePlayer();
         fade.fadeOut(1);
+        doOnce = false;
         ActivatePortal();
 
     }
@@ -136,7 +139,14 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if(currentRoom.isClear == true)
+        {
+            if(doOnce == false)
+            {
+                ActiverPortaille();
+                doOnce = true;
+            }
+        }
     }
 
     internal void SetupGame(List<Room> spawnedRoom)
@@ -150,9 +160,8 @@ public class GameManager : MonoBehaviour
         DeactivateAllRoom(firstRoom);
         MoveRoom(firstRoom);
         currentRoom = firstRoom;
-        SpawnPlayer();
         ActivatePortal();
-
+        SpawnPlayer();
     }
 
     private void ActivatePortal()
@@ -160,7 +169,17 @@ public class GameManager : MonoBehaviour
         Grille laGrille = currentRoom.transform.GetComponent<Grille>();
         foreach (CasePortail portail in laGrille.portails)
         {
-            portail.LoadCollider();
+                portail.LoadCollider();
+                
+        }
+    }
+    private void ActiverPortaille()
+    {
+        Grille laGrille = currentRoom.transform.GetComponent<Grille>();
+        foreach (CasePortail portail in laGrille.portails)
+        {
+            portail.isOpen = currentRoom.isClear;
+
         }
     }
     void GetObjects()
@@ -174,7 +193,6 @@ public class GameManager : MonoBehaviour
         objects = GameObject.FindGameObjectsWithTag("Objet");
         foreach (GameObject item in objects)
         {
-            Debug.Log("Test");
             if(item.transform.parent == null)
             {
                 item.transform.parent = currentRoom.transform;

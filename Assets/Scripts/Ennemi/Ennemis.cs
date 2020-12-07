@@ -5,7 +5,6 @@ using UnityEngine;
 public class Ennemis : MonoBehaviour
 {
     public Transform target;
-
     public float speed = 200f;
     public float nextWaypointDistance = 3f;
 
@@ -17,7 +16,7 @@ public class Ennemis : MonoBehaviour
 
     public Seeker seeker;
     public Rigidbody2D rb;
-    private Animator anim;
+    public Animator anim;
     private void Start()
     {
         seeker = GetComponent<Seeker>();
