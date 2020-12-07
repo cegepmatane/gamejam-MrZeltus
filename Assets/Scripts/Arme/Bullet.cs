@@ -11,7 +11,7 @@ public class Bullet : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.transform.tag != "Player" && collision.transform.tag != "Bullet" && collision.transform.tag != "Objet" && collision.transform.tag != "ZoneActivable") 
+        if (collision.transform.tag != "Player" && collision.transform.tag != "Bullet" && collision.transform.tag != "Objet" && collision.transform.tag != "ZoneActivable" && collision.transform.tag != "BulletIgnore") 
         {
             GameObject effect = Instantiate(hitEffect, transform.position, Quaternion.identity);
             Animator.SetBool("aTouche", true);
