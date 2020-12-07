@@ -10,7 +10,7 @@ public class VieHUD : MonoBehaviour
     public static VieHUD instance;
     public Text m_TextCollectible;
     public Slider slider;
-    int a_Score;
+    public int a_Score;
 
     public void Start()
     {

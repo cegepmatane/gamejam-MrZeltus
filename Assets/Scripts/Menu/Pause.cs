@@ -32,8 +32,6 @@ public class Pause : MonoBehaviour
         {
             PauseUnActivate();
         }
-
-
     }   
 
     void PauseActivate()
