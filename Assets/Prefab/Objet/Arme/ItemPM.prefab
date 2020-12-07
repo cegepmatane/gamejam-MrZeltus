@@ -106,7 +106,7 @@ MonoBehaviour:
   cadenceDeTir: 0.2
   spred: 0.2
   NbBalle: 1
-  dommage: 5
+  dommage: 10
 --- !u!61 &6239706272738317325
 BoxCollider2D:
   m_ObjectHideFlags: 0

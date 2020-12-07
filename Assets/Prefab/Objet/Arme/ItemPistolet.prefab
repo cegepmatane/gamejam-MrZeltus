@@ -132,7 +132,7 @@ MonoBehaviour:
   cadenceDeTir: 0.5
   spred: 0.1
   NbBalle: 1
-  dommage: 10
+  dommage: 20
 --- !u!50 &5989462697163023367
 Rigidbody2D:
   serializedVersion: 4

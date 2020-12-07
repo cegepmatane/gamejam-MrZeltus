@@ -1712,7 +1712,7 @@ PrefabInstance:
       objectReference: {fileID: 844898319}
     - target: {fileID: 2655608945106297468, guid: f60686792868f6b40903c2e9cf851f4f, type: 3}
       propertyPath: levelSize
-      value: 2
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 2655608945106297468, guid: f60686792868f6b40903c2e9cf851f4f, type: 3}
       propertyPath: availibleStartRoom
