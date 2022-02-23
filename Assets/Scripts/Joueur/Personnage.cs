@@ -108,5 +108,9 @@ public class Personnage : MonoBehaviour
     {
         if (x != 0) body.AddForce(Vector2.right * x * force);
         if (y != 0) body.AddForce(Vector2.up * y * force);
+
+        Vector2 lookDir = mousePos - body.position;
+        float angle = Mathf.Atan2(lookDir.y, lookDir.x) * Mathf.Rad2Deg - 90f;
+        body.rotation = angle;
     }
 }
