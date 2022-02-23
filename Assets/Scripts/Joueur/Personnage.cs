@@ -11,6 +11,7 @@ public class Personnage : MonoBehaviour
     public bool isShield = false;
     public float speedTime = 5f;
     public int speedToAdd = 10;
+    [SerializeField] int force = 100;
 
     private float currentTime = 0f;
     internal bool isSpeed = false;
@@ -57,19 +58,10 @@ public class Personnage : MonoBehaviour
 
     void Update()
     {
-        movement.x = Input.GetAxisRaw("Horizontal");
+        /*movement.x = Input.GetAxisRaw("Horizontal");
         movement.y = Input.GetAxisRaw("Vertical");
-        mousePos = cam.ScreenToWorldPoint(Input.mousePosition);
-        if (isSpeed)
-        {
-            addSpeed = speedToAdd;
-            currentTime -= Time.deltaTime;
-            if (currentTime <= 0.0f)
-            {
-                isSpeed = false;
-                addSpeed = 0;
-            }
-        }
+        mousePos = cam.ScreenToWorldPoint(Input.mousePosition);*/
+        
 
     }
     private void OnCollisionEnter2D(Collision2D col)
@@ -114,10 +106,10 @@ public class Personnage : MonoBehaviour
     }
     private void FixedUpdate()
     {
-        body.MovePosition(body.position + movement * (runSpeed+ addSpeed) * Time.fixedDeltaTime);
+        float x = Input.GetAxis("Horizontal") * Time.fixedDeltaTime;
+        float y = Input.GetAxis("Vertical") * Time.fixedDeltaTime;
 
-        Vector2 lookDir = mousePos - body.position;
-        float angle = Mathf.Atan2(lookDir.y, lookDir.x) * Mathf.Rad2Deg - 90f;
-        body.rotation = angle;
+        if (x != 0) body.AddForce(Vector2.right * x * force);
+        if (y != 0) body.AddForce(Vector2.up * y * force);
     }
 }

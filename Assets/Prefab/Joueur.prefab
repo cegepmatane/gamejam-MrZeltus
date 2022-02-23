@@ -83,10 +83,11 @@ MonoBehaviour:
   firePoint: {fileID: 2068314169258874678}
   body: {fileID: 742959167}
   isShield: 0
-  speedTime: 5
+  speedTime: 2
   speedToAdd: 10
+  force: 500
   cam: {fileID: 0}
-  runSpeed: 3.5
+  runSpeed: 4
 --- !u!50 &742959167
 Rigidbody2D:
   serializedVersion: 4
@@ -172,10 +173,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Vie: {fileID: 0}
+  isDead: 0
   m_Health: 100
   max_Health: 100
   currentVie: 0
   barreVie: {fileID: 0}
+  isDone: 0
   immunity: 0.5
 --- !u!114 &2965204176257620557
 MonoBehaviour:
