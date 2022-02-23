@@ -60,6 +60,7 @@ public class Personnage : MonoBehaviour
         movement.x = Input.GetAxisRaw("Horizontal");
         movement.y = Input.GetAxisRaw("Vertical");
         mousePos = cam.ScreenToWorldPoint(Input.mousePosition);
+
         if (isSpeed)
         {
             addSpeed = speedToAdd;
@@ -70,7 +71,6 @@ public class Personnage : MonoBehaviour
                 addSpeed = 0;
             }
         }
-
     }
     private void OnCollisionEnter2D(Collision2D col)
     {
@@ -114,7 +114,7 @@ public class Personnage : MonoBehaviour
     }
     private void FixedUpdate()
     {
-        body.MovePosition(body.position + movement * (runSpeed+ addSpeed) * Time.fixedDeltaTime);
+        body.MovePosition(body.position + movement * (runSpeed + addSpeed) * Time.fixedDeltaTime);
 
         Vector2 lookDir = mousePos - body.position;
         float angle = Mathf.Atan2(lookDir.y, lookDir.x) * Mathf.Rad2Deg - 90f;
