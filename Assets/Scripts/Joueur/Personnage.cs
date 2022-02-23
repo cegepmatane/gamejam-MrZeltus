@@ -58,9 +58,9 @@ public class Personnage : MonoBehaviour
 
     void Update()
     {
-        /*movement.x = Input.GetAxisRaw("Horizontal");
+        movement.x = Input.GetAxisRaw("Horizontal");
         movement.y = Input.GetAxisRaw("Vertical");
-        mousePos = cam.ScreenToWorldPoint(Input.mousePosition);*/
+        mousePos = cam.ScreenToWorldPoint(Input.mousePosition);
         
 
     }
@@ -106,9 +106,6 @@ public class Personnage : MonoBehaviour
     }
     private void FixedUpdate()
     {
-        float x = Input.GetAxis("Horizontal") * Time.fixedDeltaTime;
-        float y = Input.GetAxis("Vertical") * Time.fixedDeltaTime;
-
         if (x != 0) body.AddForce(Vector2.right * x * force);
         if (y != 0) body.AddForce(Vector2.up * y * force);
     }
