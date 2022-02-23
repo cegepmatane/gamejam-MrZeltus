@@ -11,7 +11,6 @@ public class Personnage : MonoBehaviour
     public bool isShield = false;
     public float speedTime = 5f;
     public int speedToAdd = 10;
-    [SerializeField] int force = 100;
 
     private float currentTime = 0f;
     internal bool isSpeed = false;
@@ -115,9 +114,8 @@ public class Personnage : MonoBehaviour
     }
     private void FixedUpdate()
     {
-        if (x != 0) body.AddForce(Vector2.right * x * force);
-        if (y != 0) body.AddForce(Vector2.up * y * force);
-         
+        body.MovePosition(body.position + movement * (runSpeed + addSpeed) * Time.fixedDeltaTime);
+
         Vector2 lookDir = mousePos - body.position;
         float angle = Mathf.Atan2(lookDir.y, lookDir.x) * Mathf.Rad2Deg - 90f;
         body.rotation = angle;
