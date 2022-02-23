@@ -2,18 +2,20 @@
 
 public class PersonnageRamasser : MonoBehaviour
 {
-    public GameObject objet;
-    public bool playerHit = false;
     private void Update()
     {
         if (Input.GetMouseButtonDown(0))
         {
-            RaycastHit2D hit = Physics2D.Raycast(Camera.main.ScreenToWorldPoint(Input.mousePosition), Vector2.zero, 9);
-            if (hit.collider != null && playerHit == true && hit.collider.tag == "Objet" && hit.collider.gameObject == objet)
+            RaycastHit2D hit = Physics2D.Raycast(Camera.main.ScreenToWorldPoint(Input.mousePosition), Vector2.zero, 100);
+            
+            if (hit.collider != null && hit.collider.tag == "Objet")
             {
+                Vector3 ecart = hit.collider.gameObject.transform.position - transform.position;
+                if (ecart.magnitude <= 1)
+                {
+                    Inventaire.Instance.Recuperer(hit.transform.GetComponent<Item>());
+                }
 
-
-                Inventaire.Instance.Recuperer(hit.transform.GetComponent<Item>());
             }
         }
     }

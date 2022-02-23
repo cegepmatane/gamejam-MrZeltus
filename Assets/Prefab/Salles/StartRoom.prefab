@@ -638,8 +638,9 @@ MonoBehaviour:
   typeRoom: 4
   roomPos: {x: 0, y: 0}
   isClear: 0
-  ennemis: []
+  currentRoomEnnemie: []
   victoire: {fileID: 0}
+  computer: {fileID: 0}
   availlibleSpawnCase: []
   tileRepresentingIt: {fileID: 0}
   northRoom: {fileID: 0}
